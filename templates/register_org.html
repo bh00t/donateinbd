@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block left_side_bar %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="jumbotron" style="background:#7579DF; color:#FFFFFF">
+                <h1>Donation in Bangladesh</h1>
+                <h3 class="text-right">Provide fund, help people</h3>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-11" style="padding-left:70px">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Register</h3>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <form role="form" action="/register_org" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+
+                        <div class="form-group">
+                            <label>Organization name *</label>
+                            <input class="form-control" name="org_name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Registraction No *</label>
+                            <input class="form-control" name="org_registration_no">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input class="form-control" name="email">
+                            <p class="help-block">You will need to use this as userid for logging in.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password *</label>
+                            <input class="form-control" name="org_password">
+                            <p class="help-block">You will need to use this password for logging in.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Contact No *</label>
+                            <input class="form-control" name="org_ontact_no">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Street Address * </label>
+                            <input class="form-control" name="org_street_address">
+                        </div>
+
+                        <div class="form-group">
+                            <label>City/State *</label>
+                            <input class="form-control" name="org_city">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Country *</label>
+                            <select class="form-control" name="org_country">
+                                {% include "country_list" %}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Short Description about your organization</label>
+                            <textarea class="form-control" rows="3" name="org_description"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Website Link</label>
+                            <input class="form-control" name="org_website">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Register as *</label>
+                            <select class="form-control" name="org_donor_donee_type">
+                                <option></option>
+                                <option value="person">Donor</option>
+                                <option value="org">Donee</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Identification documents *</label>
+                            <input type="file" name="org_identification_doc">
+                            <p class="help-block">Provide any valid identification document which can indentify your organization.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" name="org_image">
+                        </div>
+
+
+                        <button type="submit" class="btn btn-default pull-right">Register</button>
+
+                    </form>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /#page-wrapper -->
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block right_sidebar %}
+
+{% endblock %}
+
+
+
+

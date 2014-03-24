@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+
+
+
+    <div >
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">User Detail</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        User Information
+                    </div>
+                    <!-- /.pa
+
+
+
+                    nel-heading -->
+                    <div class="panel-body">
+                        <table border="0px">
+                            <img class="pull-right" style=" width: 100px; height: 100px;"  src="{{MEDIA_URL}}{{ profile.image }}">
+                            {% if user.is_authenticated %}
+                                <a href="message/submit/{{ profile.user.username }}">Send sms to {{ profile.get_full_name }}</a>
+                            {% endif %}
+                            <tbody>
+
+{#                            <img class="pull-right" style=" width: 100px; height: 100px;"  src="{{MEDIA_URL}}{{ profile.image }}">#}
+
+
+                            <tr>
+                                <td>Account type: &nbsp;&nbsp;&nbsp;</td><td>{{ profile.type }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>User type: &nbsp;&nbsp;&nbsp;</td><td>{{ profile.second_type }}</td>
+                            </tr>
+                            <tr>
+                                <td>Name : &nbsp;&nbsp;&nbsp;</td><td>{{ profile.full_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Address :</td><td>{{ profile.address }}</td>
+                            </tr>
+                            <tr>
+                                <td>City/State :</td><td> {{ profile.city }}	</td>
+                            </tr>
+                            <tr>
+                                <td>Country :</td><td> {{ profile.country }}	</td>
+                            </tr>
+                            <tr>
+                                <td>Email: </td><td>{{ profile.user.email }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Occupation: </td><td>{{ profile.occupation }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Donated: </td><td>{{ profile.donated_count }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Feedbacks
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+
+                    <div >
+                        <div class="form-group">
+                            <label>Add your feedback</label>
+                            <textarea id="profile_feedback_message" class="form-control" name = 'message' rows="3"></textarea>
+
+                        </div>
+                        <button type="submit" id="profile_feedback_button" class="btn btn-default pull-right" >Add Feedback</button>
+                    </div>
+                        <br>
+                        <br>
+                        <hr>
+                        <label>Previous feedbacks</label>
+                        {% for feedback in profile_feedback %}
+                            <a class='list-group-item feed' data-toggle="modal" data-target="#show-feedback{{ feedback.id }}">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <strong>{{ feedback.feedback_sender }}</strong>
+                                            <span class="pull-right text-muted small">
+                                                <em>unverified</em>
+                                            </span>
+                                        </br>
+                                        {{ feedback.message }}
+                                        </br>
+                                            <span class="pull-right text-muted small">
+                                                <em>{{ feedback.event_time }}</em>
+                                            </span>
+                                    </div>
+                                    <br>
+                                </div>
+
+                            </a>
+                        {% endfor %}
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-8 -->
+
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+    <div class="modal fade" id="message">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Message Taksir</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                    <div class="form-group">
+                        <label>Your message</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Attach a file</label>
+                        <input type="file">
+                    </div>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Send</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+
+{#    <div class="modal fade" id="feedback">#}
+{#        <div class="modal-dialog">#}
+{#            <div class="modal-content">#}
+{#                <div class="modal-header">#}
+{#                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>#}
+{#                    <h4 class="modal-title">Add feedback</h4>#}
+{#                </div>#}
+{#                <div class="modal-body">#}
+{#                    <p>Your feedback was added. It will be published after verification.</p>#}
+{#                </div>#}
+{#                <div class="modal-footer">#}
+{#                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>#}
+{#                </div>#}
+{#            </div><!-- /.modal-content -->#}
+{#        </div><!-- /.modal-dialog -->#}
+{#    </div><!-- /.modal -->#}
+
+
+    {% for feedback in profile_feedback %}
+
+        <div class="modal fade" id="show-feedback{{ feedback.id }}">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Show feedback</h4>
+                    </div>
+                    <div class="modal-body">
+                        <strong>By {{ feedback.feedback_sender }}</strong>
+                        <p>{{ feedback.message }}</p>
+                    </div>
+                    <div class="modal-footer">
+{#                        <button type="button" class="btn btn-danger" data-dismiss="modal">Delete (admin only)</button>#}
+{#                        <button type="button" class="btn btn-primary" data-dismiss="modal">Make verified (admin only)</button>#}
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    {% endfor %}
+
+
+
+
+{% endblock %}
+
+

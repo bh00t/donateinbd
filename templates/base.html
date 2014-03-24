@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donate in Bangladesh | Dashboard</title>
+
+
+    <link href="{% static "donation/css/caco-style.less" %}" rel="stylesheet">
+    <link href="{% static "donation/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "donation/font-awesome/css/font-awesome.css" %}" rel="stylesheet">
+    <link href="{% static "donation/css/plugins/morris/morris-0.4.3.min.css" %}" rel="stylesheet">
+    <link href="{% static "donation/css/plugins/timeline/timeline.css" %}" rel="stylesheet">
+    <link href="{% static "donation/css/sb-admin.css" %}" rel="stylesheet">
+
+
+    <script src="{% static "donation/js/less.js" %}"></script>
+{#    <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>#}
+    <script src="{% static "donation/js/jquery-1.10.2.min.js" %}"></script>
+    <script src="{%  static "donation/js/bootstrap.min.js" %}"></script>
+    <script src="{%  static "donation/js/plugins/metisMenu/jquery.metisMenu.js" %}"></script>
+
+    <!-- Page-Level Plugin Scripts - Dashboard -->
+{#    <script src="{% static "donation/js/plugins/morris/raphael-2.1.0.min.js" %}"></script>#}
+{#    <script src="{%  static "donation/js/plugins/morris/morris.js" %}"></script>#}
+
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="{%  static "donation/js/sb-admin.js" %}"></script>
+
+    <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
+{#    <script src="{%  static "donation/js/demo/dashboard-demo.js" %}"></script>#}
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+{#            alert('hic');#}
+
+            jQuery('#profile_feedback_button').click(function(){
+
+
+{#                alert('hic');#}
+
+                var message = jQuery('#profile_feedback_message').val();
+{#                alert(message);#}
+                var cur_url = document.URL;
+{#                alert(cur_url);#}
+                var arr= cur_url.split("/");
+{#                alert('hic');#}
+{#                alert( arr[arr.length-1]);#}
+
+                jQuery.ajax({
+                    url: '/add_profile_feedback',
+                    type: 'post',
+                    data:{
+                        csrfmiddlewaretoken: '{{  csrf_token }}',
+                        message : message,
+                        profile : arr[arr.length-1]
+                    },
+                    success:{
+
+                    }
+
+
+                });
+            });
+        });
+
+    </script>
+
+
+
+
+
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+{#    alert('hic');#}
+</script>
+
+<div id="wrapper">
+
+{#**********************************  top-navbar starts here  ***************************************#}
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Donation in Bangladesh</a>
+    </div>
+    <!-- /.navbar-header -->
+
+
+    {#    the following code gives the navbar in the header of the page#}
+
+
+
+
+    {% if user.is_authenticated %}
+
+
+        <ul class="nav navbar-top-links navbar-right">
+
+
+            {#************************************************************* code for the messages *****************************         #}
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-messages">
+                    <li>
+                        <a href="{{ message.link }}">
+                            <div>
+                                <strong>{{ message.sender }}</strong>
+                                   <span class="pull-right text-muted">
+                                        <em>{{ message.time }}</em>
+                                    </span>
+
+                            </div>
+                            <div>{{ message.content }}</div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                </ul>
+
+            </li>
+            {#***************************************** code for feedback *********************************************#}
+            <!-- /.dropdown -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-alerts">
+                    <li>
+                        <a href="{{ feedback.link }}">
+                            <div>
+                                <i class="fa fa-comment fa-fw"></i> New Feedback
+                                <span class="pull-right text-muted small">{{ feedback.time }}</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+
+                </ul>
+            </li>
+
+
+
+            <!-- /.dropdown -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="/my_profile">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="/my_profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    </li>
+                    <li><a href="/update_profile"><i class="fa fa-gear fa-fw"></i> Update Profile</a>
+                    </li>
+                    <li><a href="/deactivate"><i class="fa fa-gear fa-fw"></i> Deactivate Profile</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+
+                <!-- /.dropdown-user -->
+            </li>
+
+
+
+            <!-- /.dropdown -->
+        </ul>
+
+    {% else %}
+
+        <form class="pull-right" action = "/login" method="POST">
+
+            {% csrf_token %}
+            {{ auth_form.non_field_errors }}
+            {{ auth_form.username }}
+            {{ auth_form.password }}
+            {#            {{ auth_form }}#}
+            <input type="submit" value="Login">
+
+        </form>
+
+    {% endif %}
+
+    <!-- /.navbar-top-links -->
+</nav>
+<!-- /.navbar-static-top -->
+
+
+
+{#**********************************  top-navbar finishes here  ***************************************#}
+
+
+{#***********************************    code for side nav-bar    ********************************************#}
+
+{% block left_side_bar %}
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="sidebar-search">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                    </div>
+                    <!-- /input-group -->
+                </li>
+
+                {% if user.is_authenticated %}
+
+                    <li>
+                        <a href="/my_profile"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+
+                    <li>
+                        <a href="/my_donation"><i class="fa fa-table fa-fw"></i> My donations</a>
+                    </li>
+
+
+                    <li>
+                        <a href="/message"><i class="fa fa-edit fa-fw"></i> Messages</a>
+                    </li>
+
+                {% endif %}
+
+                <li>
+                    <a href="/requests"><i class="fa fa-table fa-fw"></i> Show Donation Requests</a>
+                </li>
+                <li>
+                    <a href="/donations"><i class="fa fa-table fa-fw"></i> Show Donations</a>
+                </li>
+                <li>
+                    <a href="/users"><i class="fa fa-table fa-fw"></i> Show Users list</a>
+                </li>
+                <li>
+                    <a href="/post_donation"><i class="fa fa-edit fa-fw"></i> Request For donation</a>
+                </li>
+                <li>
+                    <a href="/post_donation"><i class="fa fa-edit fa-fw"></i> Post a donation</a>
+                </li>
+
+
+
+
+            </ul>
+            <!-- /#side-menu -->
+        </div>
+        <!-- /.sidebar-collapse -->
+    </nav>
+    <!-- /.navbar-static-side -->
+
+
+
+{% endblock %}
+
+
+
+
+<div id="page-wrapper">
+
+    <div class="row">
+
+
+        {#  *******************************  main content goes here  ******************************************          #}
+        {% block content %}
+
+        {% endblock  %}
+
+        {% block right_sidebar %}
+
+        {% endblock %}
+
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Core Scripts - Include with every page -->
+
+
+
+
+
+
+</body>
+
+</html>

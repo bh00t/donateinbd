@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for profile in user_list %}
+
+        <a href="/profile/{{ profile.username }}" class=''>
+            <div class="media">
+                <img class="pull-left media-object" alt="64x64" style="width: 64px; height: 64px;" src="{{MEDIA_URL}}{{ profile.userprofile.image }}" >
+                <div class="media-body">
+                    Name: {{  profile.userprofile.get_full_name }}
+                    <br>
+                    Type: {{ profile.userprofile.donor_donee_type }}
+                    <br>
+                    Location: {{ profile.userprofile.country }}
+                    <br>
+                    More...
+                </div>
+                <br>
+            </div>
+
+        </a>
+        <hr>
+
+    {% endfor %}
+
+{% endblock %}

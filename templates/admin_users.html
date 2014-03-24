@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="col-lg-8">
+    <div class="row" style="padding: 10px 10px 10px 10px;">
+        <div>
+
+            <h3 style="text-align: center;"><strong>User list</strong>&nbsp;<span class="label label-default">1-10 of 40</span></h3>
+
+            <br>
+            <br>
+
+            {% for profile in profile_list %}
+
+                <a href="/profile/{{ profile.id }}" class=''>
+                    <div class="media">
+                        <img class="pull-left media-object" alt="64x64" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="{{ profile.profile_picture }}">
+                        <div class="media-body">
+                            Name: {{ profile.full_name }}
+                                            <span class="pull-right text-muted small">
+                                                <em>{{ profile.verification_status }}</em>
+                                            </span>
+                            <br>
+                            Type: {{ profile.type }}
+                            <br>
+                            Location: {{ profile.country }}
+                            <br>
+                            More...
+                        </div>
+                        <br>
+                    </div>
+
+                </a>
+                <hr>
+
+            {% endfor %}
+        </div>
+
+    </div>
+
+    </div>
+
+{% endblock %}
+
+{% block right_sidebar %}
+<div class="col-lg-4">
+
+
+
+</div>
+{% endblock %}
+

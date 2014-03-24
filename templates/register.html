@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block left_side_bar %}
+
+{% endblock %}
+
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="jumbotron" style="background:#7579DF; color:#FFFFFF">
+                <h1>Donation in Bangladesh</h1>
+                <h3 class="text-right">Provide fund, help people</h3>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-11" style="padding-left:70px">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Register</h3>
+                </div>
+                <!-- /.panel-heading -->
+
+                <div class="flash error">
+
+                    {{ register_form.non_field_errors }}
+
+                </div>
+
+
+
+                <div class="panel-body">
+                    <form role="form" action="/register" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+{#                    {{ register_form }}#}
+{##}
+{#                    <br>#}
+{#                    <br>#}
+{#                    <br>#}
+{#                    <br>#}
+{#                    <br>#}
+
+
+                        {% for form in register_form %}
+
+                            <div class = "form-goup">
+
+                                {{ form.label_tag }}
+                                {{ form }}
+                                {{ form.errors }}
+
+                            </div>
+
+                        {% endfor %}
+{#                      {{  register_form }}#}
+                        <button type="submit" class="btn btn-default pull-right">Register</button>
+
+                    </form>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /#page-wrapper -->
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block right_sidebar %}
+
+{% endblock %}
+
+
+
+

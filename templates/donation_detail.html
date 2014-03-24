@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{#    <div id="page-wrapper">#}
+    <div>
+        <div class="row">
+            <div class="col-lg-10">
+                <h1 class="page-header">Donation Detail</h1>
+            </div>
+
+            <div class="col-lg-10">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Donor Information
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <table border="0px">
+                            <tbody>
+                            <tr>
+                                <td>Name of the Donor: &nbsp;&nbsp;&nbsp;</td><td><a href="/profile/{{ post.user.user.username }}">{{ post.user.user.username }}</a></td>
+                            </tr>
+                            <tr>
+                                <td>Country :</td><td> {{ post.user.country }}	</td>
+                            </tr>
+                            <tr>
+                                <td>Donated: </td><td>{{ post.user.donation_make_count }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Donation Information
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <table border="0px">
+                            <tbody>
+                            <tr>
+                                <td>Type of donation:</td><td>{{ post.post_donation_type }}</td>
+                            </tr>
+
+{#                            {% if donation.ismoney %}#}
+
+                                <tr>
+                                    <td>Amount: </td>
+                                    <td>{{ post.post_amount }}	</td>
+                                </tr>
+                                <tr>
+                                    <td>Preferred donation method: &nbsp;&nbsp;&nbsp;</td>
+                                    <td>{{ post.post_donation_method }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Interested sectors: </td>
+                                    <td>
+                                            {{ post.post_sector }}
+                                            <br>
+{#                                        {% endfor %}#}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Description:</td><td>{{ post.post_detail }}</td>
+                                </tr>
+
+                                </tbody>
+
+{#                            {% else  %}#}
+
+
+{#                            {% endif %}#}
+                        </table>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#confirm"> Request Donation</button>
+                        <button class="btn btn-default pull-right" data-toggle="modal" data-target="#priority"> Change priority(admin only)</button>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-8 -->
+
+        </div>
+        <!-- /.row -->
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+    <div class="modal fade" id="confirm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Request donation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Donation request sent to Taksir. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" id="priority">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Change priority</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <label>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Change</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}
+

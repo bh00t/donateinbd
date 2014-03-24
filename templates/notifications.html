@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-lg-8">
+    <div class="row" style="padding: 10px 10px 10px 10px;">
+        <div>
+
+            <h3 style="text-align: center;">
+                <strong>Notifications</strong>&nbsp;
+
+            </h3>
+            <br>
+            <br>
+
+            {% for notification in notificatons %}
+                <div class="media">
+                    <div class="media-body">
+                        <a class="list-group-item" href="donation_detail.html">
+                            <h4 class="media-heading">notification.summary</h4>
+                            {{ notification.detail }}
+                        </a>
+                    </div>
+                    <br>
+                    By
+                    <a href="/profile/{{ notification.profile_id }}">{{ notification.profile_full_name }}
+                    </a>
+                    on
+                    <time>{{ notification.event_time }}</time>
+                </div>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

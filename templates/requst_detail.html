@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Donation Detail</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Donee Information
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+							<table border="0px">
+								<tbody>
+									<tr>
+										<td>Name of the Donee: &nbsp;&nbsp;&nbsp;</td><td><a href="/profile/{{ donation.profile_id }}">{{ donation.profile_full_name }}</a></td>
+									</tr>
+									<tr>
+										<td>Country :</td><td> {{ donation.profile_country }}	</td>
+									</tr>
+									<tr>
+										<td>Granted Donation: </td><td>{{ doantion.profile_donation_count }}</td>
+									</tr>
+								</tbody>
+							</table>
+                            <h5></h5>
+                            <h5></h5>
+                            <h5></h5>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Request Information
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+							<table border="0px">
+								<tbody>
+									<tr>
+										<td>Type of Request: </td><td>{{ donation.type }}</td>
+									</tr>
+									<tr>
+										<td>Required amount: </td><td> 40,000 Tk</td>
+									</tr>
+									<tr>
+										<td>Preferred donation method: &nbsp;&nbsp;&nbsp;</td><td>Bank transfer</td>
+									</tr>
+									<tr>
+										<td>Interested sectors:</td><td>Relief</td>
+									</tr>
+									<tr>
+										<td>Reason:</td><td>People are suffering from cold. They need help with winter clothing.</td>
+									</tr>
+									<tr>
+										<td>Supporting documents :</td><td><a href="#">Some file</a></td>
+									</tr>
+								</tbody>
+							</table>
+							</br>
+							</br>
+							</br>
+                            <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#confirm">Make donation</button>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-8 -->
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+
+    <div class="modal fade" id="confirm">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title">Grant donation</h4>
+		  </div>
+		  <div class="modal-body">
+			<p>Donation Grant notification sent to Ashiqul Mostofa. You will be notified after he sees your grant. </p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+    <!-- /#wrapper -->
+
+    <!-- Core Scripts - Include with every page -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <!-- Page-Level Plugin Scripts - Dashboard -->
+    <script src="js/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="js/plugins/morris/morris.js"></script>
+
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="js/sb-admin.js"></script>
+
+    <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
+    <script src="js/demo/dashboard-demo.js"></script>
+
+</body>
+
+</html>
+
+
+
+*****************************************************************************************************************************************
+
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Request Detail</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Donee Information
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <table border="0px">
+                            <tbody>
+                            <tr>
+                                <td>Name of the Donee: &nbsp;&nbsp;&nbsp;</td><td><a href="/profile/{{ donation.profile_id }}">{{ donation.profile_full_name }}</a></td>
+                            </tr>
+                            <tr>
+                                <td>Country :</td><td> {{ donation.profile_country }}	</td>
+                            </tr>
+                            <tr>
+                                <td>Granted Donation: </td><td>{{ dontation.profile_donation_count }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Request Information
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <table border="0px">
+                            <tbody>
+                            <tr>
+                                <td>Type of Request :</td><td>{{ donation.type }}</td>
+                            </tr>
+
+                            {% if donation.ismoney %}
+
+                                <tr>
+                                    <td>Amount: </td>
+                                    <td>{{ donation.amount }}	</td>
+                                </tr>
+                                <tr>
+                                    <td>Preferred donation method: &nbsp;&nbsp;&nbsp;</td>
+                                    <td>{{ donation.method }}</td>
+                                </tr>
+                                <tr>
+                                    <td> sectors: </td>
+                                    <td>
+                                        {% for donation_sector in donation.sectors %}
+                                            {{ donation_sector }}
+                                            <br>
+                                        {% endfor %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Supporting documents :</td><td><a href="{{ donation.external_file_link }}">files</a></td>
+                                </tr>
+
+                                </tbody>
+
+                            {% else  %}
+
+
+                            {% endif %}
+                        </table>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#confirm"> Request Donation</button>
+                        <button class="btn btn-default pull-right" data-toggle="modal" data-target="#priority"> Change priority(admin only)</button>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-8 -->
+
+        </div>
+        <!-- /.row -->
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+    <div class="modal fade" id="confirm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Request donation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Donation request sent to Taksir. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" id="priority">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Change priority</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <label>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Change</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}

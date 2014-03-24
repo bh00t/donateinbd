@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+                <div class="col-lg-8">
+                   <div class="row" style="padding: 10px 10px 10px 10px;">
+                            <div>
+
+                                <h3 style="text-align: center;">
+                                    <strong>My Donations</strong>
+                                    &nbsp;
+                                </h3>
+
+                                <br>
+                                <br>
+
+                                {% for donation in my_donations %}
+
+                                <div class="media">
+                                    <div class="media-body">
+                                        <a class="list-group-item" href="/donation/{{ donation.id }}">
+                                            <h4 class="media-heading">{{ donation.summary }}</h4>
+                                            {{ donation.detail }}
+                                        </a>
+                                    </div>
+                                    <br>
+                                    Published on <time>12-12-12</time>
+                                </div>
+                                <hr>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+
+				</div>
+{% endblock %}
+
+
+{% block right_sidebar %}
+
+{% endblock %}
+

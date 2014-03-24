@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="col-lg-8">
+        <div class="row" style="padding: 10px 10px 10px 10px;">
+            <div>
+
+                <h3 style="text-align: center;">
+                    <strong>Requests</strong>
+                    &nbsp;
+                </h3>
+
+                <br>
+                {% for post in post_list %}
+                    <div class="media">
+                        <div class="media-body">
+                            <a class="list-group-item" href="post/{{ post.id }}">
+                                <h4 class="media-heading">{{ post.post_header }}</h4>
+                                {{ post.post_detail }}
+
+                            </a>
+                        </div>
+                        <br>
+                        By <a href="profile/{{ post.user.user.username }}">{{ post.user.user.username }}</a> on <time>{{ post.post_date }}</time>
+                    </div>
+                    <hr>
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock content %}
+
+
+{#{% block right_sidebar %}#}
+{##}
+{#    <div class="panel panel-default">#}
+{#        <div class="panel-heading">#}
+{#            <i class="fa fa-bell fa-fw"></i> Notifications Panel#}
+{#        </div>#}
+{#        <!-- /.panel-heading -->#}
+{#        <div class="panel-body">#}
+{#            <div class="list-group">#}
+{##}
+{#        *************  goes notification loop for  ********                #}
+{#                     notification.icon will be fa-comment fa-bell fa-envelope   #}
+{##}
+{#                <a href="#" class="list-group-item">#}
+{#                    <i class="fa {{ notification.icon }} fa-fw"></i> New {{ notification.type }}#}
+{#                                    <span class="pull-right text-muted small"><em>{{ notification.time }}</em>#}
+{#                                    </span>#}
+{#                </a>#}
+{##}
+{##}
+{#            </div>#}
+{#            <!-- /.list-group -->#}
+{#        </div>#}
+{#        <!-- /.panel-body -->#}
+{#    </div>#}
+{#    <!-- /.panel -->#}
+{#    <div class="panel panel-default">#}
+{#        <div class="panel-heading">#}
+{#            <i class="fa fa-bar-chart-o fa-fw"></i> Donation histry#}
+{#        </div>#}
+{#        <div class="panel-body">#}
+{#            <div id="morris-donut-chart"></div>#}
+{#            <a href="#" class="btn btn-default btn-block">View Details</a>#}
+{#        </div>#}
+{#        <!-- /.panel-body -->#}
+{#    </div>#}
+{#{% endblock %}#}

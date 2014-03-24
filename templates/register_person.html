@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block left_side_bar %}
+
+{% endblock %}
+
+
+
+
+
+
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="jumbotron" style="background:#7579DF; color:#FFFFFF">
+                <h1>Donation in Bangladesh</h1>
+                <h3 class="text-right">Provide fund, help people</h3>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-11" style="padding-left:70px">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Register</h3>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <form role="form" action="/register_person" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% load widget_tweaks %}
+
+                        <div class="form-group">
+                            <label for=person_first_name">First name *</label>
+                            <input class="form-control" name="id_person_first_name">
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="person_last_name">Last name *</label>
+                            <input class="form-control" name="id_person_last_name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input class="form-control" name="id_email">
+                            <p class="help-block">You will need to use this as userid for logging in.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password *</label>
+                            <input class="form-control" name="id_person_password">
+                            <p class="help-block">You will need to use this password for logging in.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Contact No</label>
+                            <input class="form-control" name="id_person_contact_no">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Street Address</label>
+                            <input class="form-control" name="id_person_street_address">
+                        </div>
+
+                        <div class="form-group">
+                            <label>City/State</label>
+                            <input class="form-control" name="id_person_city">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Country</label>
+                            <select class="form-control" name="id_person_country">
+                                {% include "country_list" %}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Occupation</label>
+                            <input class="form-control" name="id_person_occupation">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Register as</label>
+                            <select class="form-control" name="id_person_register_as">
+                                <option></option>
+                                <option value="person">Donor</option>
+                                <option value="org">Donee</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Identification documents *</label>
+                            <input type="file" name="id_person_file">
+                            <p class="help-block">Provide national id/driving liscense/scanned copy passport/any valid id.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" name="id_person_image">
+                        </div>
+
+                        <button type="submit" class="btn btn-default pull-right">Register</button>
+
+                    </form>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /#page-wrapper -->
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block right_sidebar %}
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="col-lg-8">
+        <div class="row" style="padding: 10px 10px 10px 10px;">
+            <div>
+
+                <h3 style="text-align: center;"><strong>Update profile</strong></h3>
+
+                <br>
+
+                {#                Conversation between you and {{ profile }}#}
+                {#                Conversation between you and {{ profile.id }}#}
+
+
+                <br>
+                <hr>
+                {#                {{ update_form.password }}#}
+                {#                {{ update_form.as_p }}#}
+
+
+                <form action="/update_profile" method="post">
+
+                    {% for form_element in update_form %}
+                        {{ form_element.label_tag }}{{ form_element }}
+                        <br>
+                        <br>
+                    {% endfor %}
+
+                </form>
+
+                <br>
+                <br><br><br><hr>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="col-lg-8">
+        <div class="row" style="padding: 10px 10px 10px 10px;">
+            <div>
+
+                <h3 style="text-align: center;"><strong>Messages</strong></h3>
+
+                <br>
+
+{#                Conversation between you and {{ profile }}#}
+{#                Conversation between you and {{ profile.id }}#}
+                Conversation between you and {{ profile.userprofile.get_full_name }}
+
+                <br>
+                <hr>
+
+                {% for sms in messages %}
+
+                    <div class="media" >
+                        <div class="media-body">
+                            {{sms.content}}
+                        </div>
+                        {% if sms.file %}
+                            <a href="{{ MEDIA_URL }}{{ sms.file }}">{{ sms.file }}</a>
+                        {% endif %}
+                        <br>
+                        By <a href="/profile/{{ sms.sender }}">{{ sms.sender }}</a> on <time>{{ sms.event_time }}</time>
+                    </div>
+                    <hr>
+
+                {% endfor %}
+
+                <form action="/profile/message/submit/{{ profile.username }}" enctype="multipart/form-data" method="post">
+
+                    {% csrf_token %}
+                    <textarea id="message_written" name="message" cols="70" rows="6" placeholder="Write your message here ... "></textarea>
+                    <hr>
+                    <input type="file" name="file" class="pull-left" />
+                    <button class="btn btn-primary pull-right" type="submit" >Send</button>
+
+                </form>
+
+
+                <br>
+                <br><br><br><hr>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+

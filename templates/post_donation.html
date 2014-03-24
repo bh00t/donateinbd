@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+{% load widget_tweaks %}
+
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <form role="form" action="/submit_donation" method="POST">
+                    {% csrf_token %}
+                    {{ post_donation_form.as_p }}
+
+
+
+{#                    {% for form in post_donation_form %}#}
+{##}
+{#                        <div class="form-group">#}
+{##}
+{##}
+{##}
+{#                        </div>#}
+{##}
+{#                    {% endfor %}#}
+
+                    {#                    <div class="form-group">#}
+                    {#                        <label>Type of Donation *</label>#}
+                    {#                        <select class="form-control">#}
+                    {#                            <option>Money</option>#}
+                    {#                            <option>Goods/Relief</option>#}
+                    {#                        </select>#}
+                    {#                    </div>#}
+                    {##}
+                    {#                    <div class="form-group">#}
+                    {#                        <label>Amount you want to donate *</label>#}
+                    {#                        <input class="form-control">#}
+                    {#                    </div>#}
+                    {#                    <div class="form-group">#}
+                    {#                        <label>Sectors/Tags *</label>#}
+                    {#                        <select multiple class="form-control">#}
+                    {#                            <option>Education</option>#}
+                    {#                            <option>Medication</option>#}
+                    {#                            <option>Relief</option>#}
+                    {#                            <option>Innovative projects</option>#}
+                    {#                            <option>Employment</option>#}
+                    {#                        </select>#}
+                    {#                        <p class="help-block">Select all that apply.</p>#}
+                    {#                    </div>#}
+                    {#                    <div class="form-group">#}
+                    {#                        <label>Preferred Donation Method</label>#}
+                    {#                        <input class="form-control" placeholder="Enter text">#}
+                    {#                    </div>#}
+                    {#                    <div class="form-group">#}
+                    {#                        <label>Short description</label>#}
+                    {#                        <textarea class="form-control" rows="3"></textarea>#}
+                    {#                        <p class="help-block">Write what do you expect from the donee.</p>#}
+                    {#                    </div>#}
+                    <button type="submit" class="btn btn-default pull-right">Post a donation</button>
+
+                </form>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+{% endblock %}

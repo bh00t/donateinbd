@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="col-lg-8">
+        <div class="row" style="padding: 10px 10px 10px 10px;">
+            <div>
+
+                <h3 style="text-align: center;"><strong>Messages</strong></h3>
+
+                <br>
+
+                {#                Conversation between you and {{ profile }}#}
+                {#                Conversation between you and {{ profile.id }}#}
+
+
+                <br>
+                <hr>
+
+                {% for sms in messages %}
+
+                    {% if sms.sender == profile.username %}
+
+                        <a href="profile/message/submit/{{ sms.receiver }}">
+
+                    {% else %}
+                        <a href="profile/message/submit/{{ sms.sender}}">
+
+                    {% endif %}
+
+                    <div class="media" >
+                        <div class="media-body">
+                            {{sms.content}}
+                        </div>
+                        {% if sms.file %}
+                            <a href="{{ MEDIA_URL }}{{ sms.file }}">{{ sms.file }}</a>
+                        {% endif %}
+                        <br>
+                        By <a href="/profile/{{ sms.sender }}">{{ sms.sender }}</a> on <time>{{ sms.event_time }}</time>
+                    </div>
+                    <hr>
+
+                    </a>
+
+                {% endfor %}
+
+
+
+                <br>
+                <br><br><br><hr>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+
