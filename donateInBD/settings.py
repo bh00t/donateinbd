@@ -59,8 +59,8 @@ ROOT_URLCONF = 'donateInBD.urls'
 WSGI_APPLICATION = 'donateInBD.wsgi.application'
 
 from secret import *
-DATABASES = databases
-SECRET_KEY = secret_key
+DATABASES =databases
+SECRET_KEY=secret_key
 
 
 # Database
