@@ -64,15 +64,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="44" selection-start="659" selection-end="659" vertical-scroll-proportion="-0.0" vertical-offset="522" max-vertical-offset="3852">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="post_donation.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/post_donation.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -85,25 +76,16 @@
       <file leaf-file-name="notifications.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/notifications.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="14" selection-start="1081" selection-end="1081" vertical-scroll-proportion="-23.333334" vertical-offset="0" max-vertical-offset="756">
+            <state line="35" column="14" selection-start="1081" selection-end="1081" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="756">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="secret.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/donateInBD/secret.py">
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="65" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/donateInBD/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="0" selection-start="1528" selection-end="1587" vertical-scroll-proportion="0.38073394" vertical-offset="748" max-vertical-offset="1962">
+            <state line="2" column="8" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="144">
               <folding />
             </state>
           </provider>
@@ -135,7 +117,25 @@
       <file leaf-file-name="message.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="17" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="1080">
+            <state line="46" column="18" selection-start="1711" selection-end="1711" vertical-scroll-proportion="-21.962963" vertical-offset="235" max-vertical-offset="1080">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="secret.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/donateInBD/secret.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="35" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/donateInBD/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="0" selection-start="1596" selection-end="1596" vertical-scroll-proportion="1.321101" vertical-offset="0" max-vertical-offset="1980">
               <folding />
             </state>
           </provider>
@@ -194,18 +194,18 @@
         <option value="$PROJECT_DIR$/donateInBD/urls.py" />
         <option value="$PROJECT_DIR$/donation/admin.py" />
         <option value="$PROJECT_DIR$/donation/models.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/templates/notifications.html" />
-        <option value="$PROJECT_DIR$/donateInBD/secret.py" />
         <option value="$PROJECT_DIR$/donateInBD/settings.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/donateInBD/secret.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1215" />
-    <option name="height" value="1000" />
+    <option name="x" value="64" />
+    <option name="y" value="-5" />
+    <option name="width" value="1217" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -803,15 +803,16 @@
       <workItem from="1395382967340" duration="28325000" />
       <workItem from="1395694822831" duration="53000" />
       <workItem from="1395694903458" duration="382000" />
-      <workItem from="1395695304856" duration="1190000" />
+      <workItem from="1395695304856" duration="1607000" />
+      <workItem from="1395696989358" duration="320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116966000" />
+    <option name="totallyTimeSpent" value="117703000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1215" height="1000" extended-state="6" />
+    <frame x="64" y="-5" width="1217" height="1030" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -838,16 +839,16 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21574973" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -865,8 +866,8 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21574973" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -933,9 +934,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/donation/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
-          <folding />
-        </state>
+        <state line="11" column="0" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/donateInBD/urls.py">
@@ -1077,13 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/post_donation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="49" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1332">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/my_profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="78" column="29" selection-start="2821" selection-end="2821" vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="3165">
@@ -1100,13 +1092,6 @@
             <marker date="1394275533291" expanded="false" signature="129:158" placeholder="..." />
             <marker date="1394275533291" expanded="false" signature="239:258" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/message.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="17" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="900">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,39 +1134,51 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/donation/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="357" selection-end="357" vertical-scroll-proportion="0.35622817" vertical-offset="0" max-vertical-offset="2214" />
+      </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/notifications.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="357" selection-end="357" vertical-scroll-proportion="0.35622817" vertical-offset="0" max-vertical-offset="2214">
+        <state line="35" column="14" selection-start="1081" selection-end="1081" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="756">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="12" selection-end="12" vertical-scroll-proportion="0.041284405" vertical-offset="0" max-vertical-offset="872">
+        <state line="2" column="8" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="144">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/notifications.html">
+    <entry file="file://$PROJECT_DIR$/templates/post_donation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="14" selection-start="1081" selection-end="1081" vertical-scroll-proportion="-23.333334" vertical-offset="0" max-vertical-offset="756">
+        <state line="15" column="49" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1332">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="18" selection-start="1711" selection-end="1711" vertical-scroll-proportion="-21.962963" vertical-offset="235" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/donateInBD/secret.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="65" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
+        <state line="10" column="35" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/donateInBD/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="1528" selection-end="1587" vertical-scroll-proportion="0.38073394" vertical-offset="748" max-vertical-offset="1962">
+        <state line="64" column="0" selection-start="1596" selection-end="1596" vertical-scroll-proportion="1.321101" vertical-offset="0" max-vertical-offset="1980">
           <folding />
         </state>
       </provider>
