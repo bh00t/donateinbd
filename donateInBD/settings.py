@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6)6eq_f&go7#yz8b9#rb23_dgfw$fcfo0z_@t04k9%*tyzc3@v'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -58,21 +58,12 @@ ROOT_URLCONF = 'donateInBD.urls'
 
 WSGI_APPLICATION = 'donateInBD.wsgi.application'
 
+from secret import DATABASES
+from secret import SECRET_KEY
+
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'donateinbd',
-        'USER': 'root',
-        'PASSWORD': 's',
-        'HOST': 'localhost',
-        'PORT': 3306,
-
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/

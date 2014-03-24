@@ -82,10 +82,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notifications.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="notifications.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/notifications.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="845">
+            <state line="35" column="14" selection-start="1081" selection-end="1081" vertical-scroll-proportion="-23.333334" vertical-offset="0" max-vertical-offset="756">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="secret.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/donateInBD/secret.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="65" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/donateInBD/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="0" selection-start="1528" selection-end="1587" vertical-scroll-proportion="0.38073394" vertical-offset="748" max-vertical-offset="1962">
               <folding />
             </state>
           </provider>
@@ -145,15 +163,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register_back.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/register_back.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="83" selection-start="4247" selection-end="4247" vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="3726">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -184,9 +193,11 @@
         <option value="$PROJECT_DIR$/donation/views.py" />
         <option value="$PROJECT_DIR$/donateInBD/urls.py" />
         <option value="$PROJECT_DIR$/donation/admin.py" />
-        <option value="$PROJECT_DIR$/donateInBD/settings.py" />
         <option value="$PROJECT_DIR$/donation/models.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/templates/notifications.html" />
+        <option value="$PROJECT_DIR$/donateInBD/secret.py" />
+        <option value="$PROJECT_DIR$/donateInBD/settings.py" />
       </list>
     </option>
   </component>
@@ -309,13 +320,14 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django server.donateInBD">
     <configuration default="false" name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -735,7 +747,7 @@
       <option name="port" value="8080" />
       <option name="host" value="" />
       <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
+      <option name="browserUrl" value="http://127.0.0.1:8080/" />
       <option name="runTestServer" value="false" />
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
@@ -791,12 +803,12 @@
       <workItem from="1395382967340" duration="28325000" />
       <workItem from="1395694822831" duration="53000" />
       <workItem from="1395694903458" duration="382000" />
-      <workItem from="1395695304856" duration="554000" />
+      <workItem from="1395695304856" duration="1190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116330000" />
+    <option name="totallyTimeSpent" value="116966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1215" height="1000" extended-state="6" />
@@ -879,11 +891,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/donation/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/donateInBD/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="576" />
@@ -1136,11 +1143,6 @@
         <state line="10" column="0" selection-start="268" selection-end="268" vertical-scroll-proportion="0.20642202" vertical-offset="0" max-vertical-offset="872" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/donateInBD/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="28" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.6284404" vertical-offset="1234" max-vertical-offset="2124" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/donation/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="98" selection-start="2916" selection-end="2979" vertical-scroll-proportion="0.62863797" vertical-offset="702" max-vertical-offset="2196" />
@@ -1165,7 +1167,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/notifications.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
+        <state line="35" column="14" selection-start="1081" selection-end="1081" vertical-scroll-proportion="-23.333334" vertical-offset="0" max-vertical-offset="756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/donateInBD/secret.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="65" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/donateInBD/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="0" selection-start="1528" selection-end="1587" vertical-scroll-proportion="0.38073394" vertical-offset="748" max-vertical-offset="1962">
           <folding />
         </state>
       </provider>
