@@ -64,22 +64,46 @@ from django_countries.data import COUNTRIES
 
 class UserProfileUpdateForm(forms.ModelForm):
 
-
-    first_name = forms.CharField(max_length=100, label="First Name")
-    last_name = forms.CharField(max_length=100, label="Last Name")
-    password = forms.CharField(widget=forms.PasswordInput(),help_text="this field is required to update")
+    email = forms.EmailField(required=True,label="Email")
+    first_name = forms.CharField(required=False, max_length=100, label="First Name")
+    last_name = forms.CharField(required=False, max_length=100, label="Last Name")
+    password = forms.CharField(required=False, widget=forms.PasswordInput(),help_text="*** this field is required to update ***")
 
 
     class Meta:
         model = UserProfile
 
-        fields =['first_name','last_name','donor_donee_type', 'image', 'occupation', 'contact_no', 'street_no', 'street_address', 'city', 'country', 'description', 'website']
+        fields =['first_name','last_name','email','donor_donee_type', 'image', 'occupation', 'contact_no', 'street_no', 'street_address', 'city', 'country', 'description', 'website']
 
         widgets={
             'country':forms.Select(choices=sorted(COUNTRIES.items(),key=lambda country:country[1])),
+            'email': forms.EmailField(),
             'password': forms.PasswordInput(),
         }
 
+        error_messages = {
+            'password': {
+                'Wrong Password': "Password didnot match",
+            },
+        }
+
+    def is_valid(self):
+        form = super(UserProfileUpdateForm, self).is_valid()
+        for f, error in self.errors.iteritems():
+            self.fields[f].widget.attrs.update({"class":"error",'value':strip_tags(error)})
+
+        return form
+
+
+
+
+from models import Report
+from models import WorkingProject
+
+class ReportForm(forms.ModelForm):
+
+    class Meta:
+        model=Report
 
 
 

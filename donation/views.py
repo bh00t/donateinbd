@@ -353,54 +353,64 @@ def my_messages(request):
 from forms import UserProfileUpdateForm
 
 @login_required()
-def update(request):
+def update(request, update_form= None):
 
     # print('hic')
     #
 
-    user = User.objects.get(username=request.user)
+    if request.method == "GET":
 
-    userprofile = UserProfile.objects.get(user=user)
+        user = User.objects.get(username=request.user)
 
-    auth_form = AuthenticateForm()
-    update_form = UserProfileUpdateForm(instance=userprofile)
+        userprofile = UserProfile.objects.get(user=user)
 
-
-
-
-    update_form.fields['first_name'].initial = user.first_name
-    update_form.fields['last_name'].initial = user.last_name
-
-
-    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
-
-    if len(messages5) <=5:
-        message5 = messages5
-    else :
-        message5 = messages5[:5]
-
-    # message5=message5[::-1]
-
-    return render(request, 'update.html', {'update_form':update_form, 'auth_form':auth_form, 'message5':message5 })
+        auth_form = AuthenticateForm()
+        update_form = update_form or UserProfileUpdateForm(instance=userprofile)
 
 
 
-def update_profile(request):
+
+        update_form.fields['first_name'].initial = user.first_name
+        update_form.fields['last_name'].initial = user.last_name
+        update_form.fields['email'].initial = user.email
 
 
-    update_form=UserProfileUpdateForm(request.POST,request.FILES)
+        messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
 
-    user = User.objects.get(username=request.user)
+        if len(messages5) <=5:
+            message5 = messages5
+        else :
+            message5 = messages5[:5]
 
-    if user.check_password(update_form.data['password']):
+        # message5=message5[::-1]
 
+        return render(request, 'update.html', {'update_form':update_form, 'auth_form':auth_form, 'message5':message5 })
 
+    if request.method == "POST":
 
-        pass
+        update_form=UserProfileUpdateForm(request.POST,request.FILES)
 
-    else :
+        user = User.objects.get(username=request.user)
 
-        pass
+        if user.check_password(update_form.data['password']) and update_form.is_valid():
+
+            user.first_name=update_form.cleaned_data['first_name']
+            user.last_name=update_form.cleaned_data['last_name']
+            user.email=update_form.cleaned_data['email']
+
+            user.save()
+
+            print "hic"
+            return my_profile(request)
+        else :
+            request.method="GET"
+
+            update_form.fields['password'].widget.attrs.update({'class': 'error'})
+
+            print update_form
+
+            return update(request,update_form)
+
 
 
 
@@ -489,11 +499,14 @@ class send_message(View):
         return render(request, 'message.html', {'messages':messages, 'profile':profile ,'auth_form':auth_form, 'message5':message5})
 
 
+from forms import ReportForm
 
-
+@login_required()
 def submit_report(request):
-	return render(request,'submit_report.html', { } );
+    submit_report_form = ReportForm()
+    # print submit_report_form
+    return render(request,'submit_report.html', {'submit_report_form':submit_report_form})
 
 
 def show_report(request):
-	return render(request,'show_report.html', { } );
+    return render(request,'show_report.html', { } )

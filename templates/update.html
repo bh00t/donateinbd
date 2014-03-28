@@ -11,28 +11,34 @@
 
                 <br>
 
-                {#                Conversation between you and {{ profile }}#}
-                {#                Conversation between you and {{ profile.id }}#}
-
-
                 <br>
                 <hr>
-                {#                {{ update_form.password }}#}
-                {#                {{ update_form.as_p }}#}
 
 
-                <form action="/update_profile" method="post">
-
+                <form action="/update" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
                     {% for form_element in update_form %}
                     <div class="form-group">
 
                         {{ form_element.label_tag }}
 							
-                       {% render_field form_element class+="form-control" %}
+                        {% render_field form_element class+="form-control" %}
+
+                        {{ form_element.error_messages }}
+
+                        {{ form_element.help_text }}
+
+
                     </div>
                     {% endfor %}
 
+                    {{ update_form.non_field_errors }}
+
+                    <button type="submit" class="btn btn-default pull-right">Post a donation</button>
+
                 </form>
+
+{#                {{ update_form }}#}
 
                 <br>
                 <br><br><br><hr>

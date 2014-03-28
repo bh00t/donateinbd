@@ -116,3 +116,22 @@ class PostFeedback(models.Model):
     verified = models.CharField(max_length=100,choices=FEEDBACK_VERIFICATION, default="unverified")
 
 
+
+class WorkingProject(models.Model):
+
+    user = models.ForeignKey(User)
+    post = models.ForeignKey(Post)
+    status = models.BooleanField(default=1)
+
+
+
+class Report(models.Model):
+
+    working_project = models.CharField(max_length=200,null=True)
+    file = models.FileField("Supporting Document",upload_to='media/report/%Y/%M/%D')
+    date=models.DateTimeField(auto_now=True)
+    event_time=models.TimeField(auto_now=True)
+    description = models.TextField(null=True,verbose_name="A short description on your work")
+    additional_info = models.TextField(null=True,verbose_name="Additional message about further assistance",help_text="Write if you need further assistance.")
+
+
