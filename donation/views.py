@@ -464,4 +464,9 @@ class send_message(View):
 
 
 
+def submit_report(request):
+	return render(request,'submit_report.html', { } );
 
+
+def show_report(request):
+	return render(request,'show_report.html', { } );

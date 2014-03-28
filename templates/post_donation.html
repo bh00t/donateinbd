@@ -13,9 +13,13 @@
             <div class="panel-body">
                 <form role="form" action="/submit_donation" method="POST">
                     {% csrf_token %}
-                    {{ post_donation_form.as_p }}
-
-
+					{% for form_element in post_donation_form %}
+						<div class="form-group">
+							{{ form_element.label_tag }}
+								 {% render_field form_element class+="form-control" %}
+							</div>
+					{% endfor %}
+					
 
 {#                    {% for form in post_donation_form %}#}
 {##}

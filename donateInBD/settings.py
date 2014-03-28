@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'donation',
     'django.contrib.admin',
     'widget_tweaks',
-    'south',
+    #~ 'south',
 )
 
 ACCOUNT_ACTIVATION_DATA = 15

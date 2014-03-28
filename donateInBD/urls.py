@@ -39,8 +39,11 @@ urlpatterns = patterns('',
                        url(r'^profile/message/submit/(?P<receiver>\w+)', donationview.send_message.as_view()),
 
 
-
-
+					   url(r'^report/submit',donationview.submit_report),
+					   url(r'^report/show',donationview.show_report),
+					
+						
+						
                        (r'^grappelli/', include('grappelli.urls')),
                        url(r'^admin/', include(admin.site.urls)),
                        (r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),

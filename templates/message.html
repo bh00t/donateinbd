@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+
+{% load widget_tweaks %}
+
     <div class="col-lg-8">
         <div class="row" style="padding: 10px 10px 10px 10px;">
             <div>
@@ -31,10 +34,12 @@
 
                 {% endfor %}
 
-                <form action="/profile/message/submit/{{ profile.username }}" enctype="multipart/form-data" method="post">
+                <form action="/profile/message/submit/{{ profile.username }}" enctype="multipart/form-data" method="post" role="form">
 
                     {% csrf_token %}
-                    <textarea id="message_written" name="message" cols="70" rows="6" placeholder="Write your message here ... "></textarea>
+                    <div class="form-group">
+                    <textarea id="message_written" name="message" cols="70" rows="6" placeholder="Write your message here ... " class="form-control"></textarea>
+                    </div>
                     <hr>
                     <input type="file" name="file" class="pull-left" />
                     <button class="btn btn-primary pull-right" type="submit" >Send</button>
