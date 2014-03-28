@@ -39,9 +39,9 @@ class UserProfile(models.Model):
 
     def get_full_name(self):
 
-        full_name = self.user.first_name + self.user.last_name
+        full_name = self.user.first_name + " " + self.user.last_name
 
-        if len(full_name) == 0 :
+        if len(full_name) == 1 :
             return self.user.username
         return full_name
 

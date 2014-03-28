@@ -92,6 +92,7 @@ STATICFILES_FINDERS = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     "django.core.context_processors.request",
+    "django.core.context_processors.media",
 )
 
 STATIC_URL = '/static/'
@@ -101,5 +102,7 @@ templates_ = (BASE_DIR + '/templates/',)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+ADMIN_MEDIA_PREFIX ='/admin-media/'
 
 TEMPLATE_DIRS = templates_

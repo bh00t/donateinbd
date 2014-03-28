@@ -140,6 +140,8 @@ def register(request,register_form=None):
 
         # print(register_form)
 
+        form = AuthenticateForm(data=request.POST)
+
         register_form = register_form or RegistrationForm()
 
         print(register_form)
@@ -293,6 +295,7 @@ def all_users_view(request,auth_form = None):
     user_list = User.objects.all()
 
     messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+
     if len(messages5) <=5:
         message5 = messages5
     else :
@@ -354,9 +357,23 @@ def update(request):
 
     # print('hic')
     #
+
+    user = User.objects.get(username=request.user)
+
+    userprofile = UserProfile.objects.get(user=user)
+
     auth_form = AuthenticateForm()
-    update_form = UserProfileUpdateForm()
+    update_form = UserProfileUpdateForm(instance=userprofile)
+
+
+
+
+    update_form.fields['first_name'].initial = user.first_name
+    update_form.fields['last_name'].initial = user.last_name
+
+
     messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+
     if len(messages5) <=5:
         message5 = messages5
     else :
@@ -367,13 +384,23 @@ def update(request):
     return render(request, 'update.html', {'update_form':update_form, 'auth_form':auth_form, 'message5':message5 })
 
 
+
 def update_profile(request):
 
 
+    update_form=UserProfileUpdateForm(request.POST,request.FILES)
+
+    user = User.objects.get(username=request.user)
+
+    if user.check_password(update_form.data['password']):
 
 
 
-    pass
+        pass
+
+    else :
+
+        pass
 
 
 

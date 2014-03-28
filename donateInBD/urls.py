@@ -30,15 +30,17 @@ urlpatterns = patterns('',
 
                        url(r'^post/(?P<pk>\d+)', donationview.post_detail_view),
                        url(r'^message$', donationview.my_messages),
+
+
                        url(r'^update$', donationview.update),
-                       url(r'^update_profile$', donationview.update),
+                       url(r'^update_profile$', donationview.update_profile),
+
+
                        url(r'^my_profile$', donationview.my_profile),
                        url(r'^profile/(?P<username>\w+)$', donationview.profile_detail_view),
                        url(r'^users/(?P<username>\w+)/$', donationview.profile_detail_view),
                        url(r'^add_profile_feedback', donationview.add_profile_feedback),
                        url(r'^profile/message/submit/(?P<receiver>\w+)', donationview.send_message.as_view()),
-
-
 
 
                        (r'^grappelli/', include('grappelli.urls')),

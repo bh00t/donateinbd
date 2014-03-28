@@ -64,13 +64,16 @@ from django_countries.data import COUNTRIES
 
 class UserProfileUpdateForm(forms.ModelForm):
 
-    password = forms.CharField(widget=forms.PasswordInput())
+
+    first_name = forms.CharField(max_length=100, label="First Name")
+    last_name = forms.CharField(max_length=100, label="Last Name")
+    password = forms.CharField(widget=forms.PasswordInput(),help_text="this field is required to update")
 
 
     class Meta:
         model = UserProfile
 
-        fields =['donor_donee_type', 'image', 'occupation', 'contact_no', 'street_no', 'street_address', 'city', 'country', 'description', 'website']
+        fields =['first_name','last_name','donor_donee_type', 'image', 'occupation', 'contact_no', 'street_no', 'street_address', 'city', 'country', 'description', 'website']
 
         widgets={
             'country':forms.Select(choices=sorted(COUNTRIES.items(),key=lambda country:country[1])),

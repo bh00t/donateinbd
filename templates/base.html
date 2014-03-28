@@ -62,9 +62,11 @@
                         message : message,
                         profile : arr[arr.length-1]
                     },
-                    success:{
+                    success:
+                        function(html){
+                        location.reload();
+                     }
 
-                    }
 
 
                 });
