@@ -45,6 +45,17 @@ class IndexView(ListView):
 
         context['auth_form']  = kwargs.get('auth_form',None) or AuthenticateForm()
 
+        # messages = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))
+        # if len(messages) <=5:
+        #     message5 = messages
+        # else :
+        #     message5 = messages[:5]
+        #
+        # message5=message5[::-1]
+
+        context['auth_form']  = kwargs.get('auth_form',None) or AuthenticateForm()
+        # context['message5']  = message5
+
         return context
 
 
@@ -64,33 +75,60 @@ def index(request, auth_form = None):
 
     post_list =  Post.objects.all()
 
+    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::5]
+    if len(messages5) <=5:
+        message5 = messages5
+    else :
+        message5 = messages5[:5]
+    # message5=message5[::-1]
 
     # print(auth_form.error_messages())
 
 
-    return render(request, 'home.html',{'post_list':post_list, 'user':request.user, 'auth_form':auth_form})
+    return render(request, 'home.html',{'post_list':post_list, 'user':request.user, 'auth_form':auth_form, 'message5':message5})
 
 
 @login_required()
 def my_donation_view(request):
 
     post_list = Post.objects.all().filter(user=request.user)
+    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+    if len(messages5) <=5:
+        message5 = messages5
+    else :
+        message5 = messages5[:5]
 
-    return render(request, 'home.html',{'post_list':post_list, 'user':request.user})
+    # message5=message5[::-1]
+
+    return render(request, 'home.html',{'post_list':post_list, 'user':request.user,'message5':message5})
 
 
 def donation_view(request, auth_form = None):
 
     post_list = Post.objects.all().filter(post_type="make donation")
+    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+    if len(messages5) <=5:
+        message5 = messages5
+    else :
+        message5 = messages5[:5]
 
-    return render(request, 'donations.html',{'post_list':post_list, 'user':request.user, 'auth_form':auth_form})
+    # message5=message5[::-1]
+
+    return render(request, 'donations.html',{'post_list':post_list, 'user':request.user, 'auth_form':auth_form, 'message5':message5})
 
 
 def request_donation_view(request, auth_form = None):
 
     post_list = Post.objects.all().filter(post_type="take donation")
+    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-5]
+    if len(messages5) <=5:
+        message5 = messages5
+    else :
+        message5 = messages5[:5]
 
-    return render(request, 'requests.html',{'post_list':post_list, 'user':request.user, 'auth_form':auth_form})
+    # message5=message5[::-1]
+
+    return render(request, 'requests.html',{'post_list':post_list, 'user':request.user, 'auth_form':auth_form, 'message5':message5})
 
 
 
@@ -158,7 +196,15 @@ def logout_view(request):
 @login_required()
 def post_donation_view(request, post_donation_form=None):
     post_donation_form = post_donation_form or PostDonationForm()
-    return render(request,'post_donation.html',{'post_donation_form': post_donation_form })
+    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+    if len(messages5) <=5:
+        message5 = messages5
+    else :
+        message5 = messages5[:5]
+
+    # message5=message5[::-1]
+
+    return render(request,'post_donation.html',{'post_donation_form': post_donation_form , 'message5':message5})
 
 
 
@@ -189,7 +235,14 @@ def submit_donation_view(request):
 def post_detail_view(request,pk=1,auth_form=None):
     auth_form = auth_form or AuthenticateForm()
     post = Post.objects.get(pk=pk)
-    return render(request,'donation_detail.html',{'post':post, 'user':request.user, 'auth_form': auth_form})
+    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+    if len(messages5) <=5:
+        message5 = messages5
+    else :
+        message5 = messages5[:5]
+
+    # message5=message5[::-1]
+    return render(request,'donation_detail.html',{'post':post, 'user':request.user, 'auth_form': auth_form, 'message5':message5})
 
 
 @login_required()
@@ -201,7 +254,16 @@ def profile_detail_view(request,username=None,auth_form=None):
     profile = UserProfile.objects.get(user=user)
     profile_feedback = ProfileFeedback.objects.all().filter(user=user)
 
-    return render(request, 'profile.html', {'profile':profile, 'user':request.user, 'auth_form': auth_form, 'profile_feedback': profile_feedback})
+    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+    if len(messages5) <=5:
+        message5 = messages5
+    else :
+        message5 = messages5[:5]
+
+    # message5=message5[::-1]
+
+
+    return render(request, 'profile.html', {'profile':profile, 'user':request.user, 'auth_form': auth_form, 'profile_feedback': profile_feedback, 'message5':message5})
 
 
 @login_required()
@@ -212,8 +274,15 @@ def my_profile(request):
     UserProfile.objects.get_or_create(user=user)
     profile = UserProfile.objects.get(user=user)
     profile_feedback = ProfileFeedback.objects.all().filter(user=user)
+    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+    if len(messages5) <=5:
+        message5 = messages5
+    else :
+        message5 = messages5[:5]
 
-    return render(request, 'my_profile.html', {'profile':profile, 'user':request.user, 'auth_form': auth_form, 'profile_feedback': profile_feedback})
+    # message5=message5[::-1]
+
+    return render(request, 'my_profile.html', {'profile':profile, 'user':request.user, 'auth_form': auth_form, 'profile_feedback': profile_feedback, 'message5':message5})
 
 
 
@@ -223,7 +292,15 @@ def all_users_view(request,auth_form = None):
 
     user_list = User.objects.all()
 
-    return render(request, 'users.html', {'user_list':user_list, 'auth_form': auth_form})
+    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+    if len(messages5) <=5:
+        message5 = messages5
+    else :
+        message5 = messages5[:5]
+
+    # message5=message5[::-1]
+
+    return render(request, 'users.html', {'message5':message5, 'user_list':user_list, 'auth_form': auth_form})
 
 
 
@@ -242,6 +319,7 @@ def add_profile_feedback(request):
     feedback.save()
 
 
+
     # pprint(getmembers(feedback))
     return HttpResponse("success")
 
@@ -255,10 +333,18 @@ def my_messages(request):
 
     profile=User.objects.all().get(username=request.user)
 
+    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+    if len(messages5) <=5:
+        message5 = messages5
+    else :
+        message5 = messages5[:5]
+
+    # message5=message5[::-1]
 
 
 
-    return render(request, 'all_message.html', {'messages':messages, 'profile':profile, 'auth_form':auth_form })
+
+    return render(request, 'all_message.html', {'messages':messages,'message5':message5, 'profile':profile, 'auth_form':auth_form })
 
 
 from forms import UserProfileUpdateForm
@@ -270,10 +356,20 @@ def update(request):
     #
     auth_form = AuthenticateForm()
     update_form = UserProfileUpdateForm()
-    return render(request, 'update.html', {'update_form':update_form, 'auth_form':auth_form })
+    messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+    if len(messages5) <=5:
+        message5 = messages5
+    else :
+        message5 = messages5[:5]
+
+    # message5=message5[::-1]
+
+    return render(request, 'update.html', {'update_form':update_form, 'auth_form':auth_form, 'message5':message5 })
 
 
 def update_profile(request):
+
+
 
 
 
@@ -286,6 +382,8 @@ from django.db.models import Q
 
 class send_message(View):
 
+
+
     def get(self, request, **kwargs):
 
 
@@ -296,20 +394,25 @@ class send_message(View):
 
 
 
-        # print messages1
-        # print messages2
-        # print messages
-
         profile = User.objects.filter(username=kwargs['receiver'])[0]
 
 
 
         auth_form = AuthenticateForm()
 
+        messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+        if len(messages5) <=5:
+            message5 = messages5
+        else :
+            message5 = messages5[:5]
+
+        # message5=message5[::-1]
+
+
 
         # print profile
 
-        return render(request, 'message.html', {'messages':messages, 'profile':profile, 'auth_form':auth_form })
+        return render(request, 'message.html', {'messages':messages, 'profile':profile, 'auth_form':auth_form, 'message5':message5 })
 
 
 
@@ -323,31 +426,40 @@ class send_message(View):
         message.file=file
 
 
-        print message.file
+        # print message.file
 
         message.content=content
         message.receiver = kwargs['receiver']
-        message.sender=sender
-        message.sender_full_name=User.objects.get(username=sender).get_full_name
+        message.sender=User.objects.get(username=sender)
+        message.sender_full_name = message.sender.userprofile.get_full_name()
+        print message.sender_full_name
         message.save()
 
-        print message
-
-        print message.file
+        # print message
+        #
+        # print message.file
 
 
         # print (request.user)
 
         messages = Message.objects.filter(Q(sender=request.user, receiver=kwargs['receiver']) | Q(sender=User.objects.get(username=kwargs['receiver']), receiver=request.user))
 
+        messages5 = Message.objects.filter(Q(sender=request.user) | Q(receiver=request.user))[::-1]
+        if len(messages5) <=5:
+            message5 = messages5
+        else :
+            message5 = messages5[:5]
 
-        profile = User.objects.filter(username=kwargs['receiver'])[0]
+        # message5=message5[::-1]
 
         # print profile
 
+        profile = User.objects.filter(username=kwargs['receiver'])[0]
+
         auth_form = AuthenticateForm()
 
-        return render(request, 'message.html', {'messages':messages, 'profile':profile ,'auth_form':auth_form})
+
+        return render(request, 'message.html', {'messages':messages, 'profile':profile ,'auth_form':auth_form, 'message5':message5})
 
 
 

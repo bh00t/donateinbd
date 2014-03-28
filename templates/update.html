@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+
+{% load widget_tweaks %}
+
 {% block content %}
     <div class="col-lg-8">
         <div class="row" style="padding: 10px 10px 10px 10px;">
@@ -21,7 +24,10 @@
                 <form action="/update_profile" method="post">
 
                     {% for form_element in update_form %}
-                        {{ form_element.label_tag }}{{ form_element }}
+
+                        {{ form_element.label_tag }}
+
+                        {{ form_element }}
                         <br>
                         <br>
                     {% endfor %}

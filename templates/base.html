@@ -120,12 +120,13 @@
                     <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-messages">
+                    {% for message in message5 %}
                     <li>
-                        <a href="{{ message.link }}">
+                        <a href="/message">
                             <div>
-                                <strong>{{ message.sender }}</strong>
+                                <strong>{{ message.sender_full_name }} Wrote</strong>
                                    <span class="pull-right text-muted">
-                                        <em>{{ message.time }}</em>
+                                        <em>{{ message.event_time }}</em>
                                     </span>
 
                             </div>
@@ -133,28 +134,29 @@
                         </a>
                     </li>
                     <li class="divider"></li>
+                    {% endfor %}
                 </ul>
 
             </li>
             {#***************************************** code for feedback *********************************************#}
             <!-- /.dropdown -->
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-alerts">
-                    <li>
-                        <a href="{{ feedback.link }}">
-                            <div>
-                                <i class="fa fa-comment fa-fw"></i> New Feedback
-                                <span class="pull-right text-muted small">{{ feedback.time }}</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-
-                </ul>
-            </li>
+{#            <li class="dropdown">#}
+{#                <a class="dropdown-toggle" data-toggle="dropdown" href="#">#}
+{#                    <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>#}
+{#                </a>#}
+{#                <ul class="dropdown-menu dropdown-alerts">#}
+{#                    <li>#}
+{#                        <a href="{{ feedback.link }}">#}
+{#                            <div>#}
+{#                                <i class="fa fa-comment fa-fw"></i> New Feedback#}
+{#                                <span class="pull-right text-muted small">{{ feedback.time }}</span>#}
+{#                            </div>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="divider"></li>#}
+{##}
+{#                </ul>#}
+{#            </li>#}
 
 
 
