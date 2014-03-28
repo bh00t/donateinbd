@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50db0b7d-2ee3-4f6f-bb2b-3428b3eab5af" name="Default" comment="having a backup in github ++&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/message.html" afterPath="$PROJECT_DIR$/templates/message.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/post_donation.html" afterPath="$PROJECT_DIR$/templates/post_donation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/show_report.html" afterPath="$PROJECT_DIR$/templates/show_report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/submit_report.html" afterPath="$PROJECT_DIR$/templates/submit_report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update.html" afterPath="$PROJECT_DIR$/templates/update.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/donateInBD/urls.py" afterPath="$PROJECT_DIR$/donateInBD/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/donation/views.py" afterPath="$PROJECT_DIR$/donation/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="donateInBD.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,10 +67,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/donateInBD/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="24" selection-start="2071" selection-end="2071" vertical-scroll-proportion="0.66472644" vertical-offset="221" max-vertical-offset="1080">
+            <state line="46" column="24" selection-start="2071" selection-end="2071" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1080">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="8" selection-start="30" selection-end="30" vertical-scroll-proportion="0.061926607" vertical-offset="0" max-vertical-offset="872">
               <folding />
             </state>
           </provider>
@@ -130,27 +134,9 @@
         </entry>
       </file>
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="236" column="8" selection-start="8109" selection-end="8109" vertical-scroll-proportion="0.0" vertical-offset="3598" max-vertical-offset="9234">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/donation/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="43" column="30" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2214">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/donation/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="49" selection-start="2654" selection-end="2654" vertical-scroll-proportion="0.0" vertical-offset="702" max-vertical-offset="2250">
               <folding />
             </state>
           </provider>
@@ -194,7 +180,6 @@
         <option value="$PROJECT_DIR$/templates/my_profile.html" />
         <option value="$PROJECT_DIR$/donation/admin.py" />
         <option value="$PROJECT_DIR$/templates/notifications.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/donateInBD/secret.py" />
         <option value="$PROJECT_DIR$/templates/update.html" />
         <option value="$PROJECT_DIR$/donation/forms.py" />
@@ -203,6 +188,7 @@
         <option value="$PROJECT_DIR$/donateInBD/urls.py" />
         <option value="$PROJECT_DIR$/donation/views.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -812,12 +798,12 @@
       <workItem from="1395695304856" duration="1607000" />
       <workItem from="1395696989358" duration="3244000" />
       <workItem from="1395779483551" duration="8480000" />
-      <workItem from="1395997884643" duration="8826000" />
+      <workItem from="1395997884643" duration="9012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137933000" />
+    <option name="totallyTimeSpent" value="138119000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1215" height="1000" extended-state="6" />
@@ -1096,11 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="8" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="144" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="102" column="120" selection-start="5514" selection-end="5514" vertical-scroll-proportion="0.33206832" vertical-offset="1661" max-vertical-offset="23814" />
@@ -1248,7 +1229,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/donateInBD/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="24" selection-start="2071" selection-end="2071" vertical-scroll-proportion="0.66472644" vertical-offset="221" max-vertical-offset="1080">
+        <state line="46" column="24" selection-start="2071" selection-end="2071" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="8" selection-start="30" selection-end="30" vertical-scroll-proportion="0.061926607" vertical-offset="0" max-vertical-offset="872">
           <folding />
         </state>
       </provider>
