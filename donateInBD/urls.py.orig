@@ -33,7 +33,9 @@ urlpatterns = patterns('',
 
 
                        url(r'^update$', donationview.update),
-                       url(r'^update_profile$', donationview.update),
+                       url(r'^update_profile$', donationview.update_profile),
+
+
                        url(r'^my_profile$', donationview.my_profile),
                        url(r'^profile/(?P<username>\w+)$', donationview.profile_detail_view),
                        url(r'^users/(?P<username>\w+)/$', donationview.profile_detail_view),
@@ -41,11 +43,14 @@ urlpatterns = patterns('',
                        url(r'^profile/message/submit/(?P<receiver>\w+)', donationview.send_message.as_view()),
 
 
+<<<<<<< HEAD
+=======
 					   url(r'^report/submit',donationview.submit_report),
 					   url(r'^report/show',donationview.show_report),
 					
 						
 						
+>>>>>>> d0bc34b5c86bf9d275cb50e9e545c37a535707a5
                        (r'^grappelli/', include('grappelli.urls')),
                        url(r'^admin/', include(admin.site.urls)),
                        (r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),

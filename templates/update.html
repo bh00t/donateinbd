@@ -24,12 +24,12 @@
                 <form action="/update_profile" method="post">
 
                     {% for form_element in update_form %}
+                    <div class="form-group">
 
                         {{ form_element.label_tag }}
-
-                        {{ form_element }}
-                        <br>
-                        <br>
+							
+                       {% render_field form_element class+="form-control" %}
+                    </div>
                     {% endfor %}
 
                 </form>
