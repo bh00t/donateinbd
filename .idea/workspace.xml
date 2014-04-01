@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50db0b7d-2ee3-4f6f-bb2b-3428b3eab5af" name="Default" comment="having a backup in github ++&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/show_report_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/donation/forms.py" afterPath="$PROJECT_DIR$/donation/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/donation/models.py" afterPath="$PROJECT_DIR$/donation/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/show_report.html" afterPath="$PROJECT_DIR$/templates/show_report.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/donation/views.py" afterPath="$PROJECT_DIR$/donation/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="donateInBD.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,10 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/donation/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="547" column="0" selection-start="14281" selection-end="14281" vertical-scroll-proportion="0.52153665" vertical-offset="9128" max-vertical-offset="10422">
+            <state line="531" column="0" selection-start="14021" selection-end="14021" vertical-scroll-proportion="0.0" vertical-offset="8912" max-vertical-offset="10476">
               <folding />
             </state>
           </provider>
@@ -134,10 +130,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/donation/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="44" selection-start="3793" selection-end="3793" vertical-scroll-proportion="0.0" vertical-offset="1157" max-vertical-offset="2556">
+            <state line="171" column="0" selection-start="5137" selection-end="5137" vertical-scroll-proportion="0.8742724" vertical-offset="2309" max-vertical-offset="3168">
               <folding />
             </state>
           </provider>
@@ -188,10 +184,10 @@
         <option value="$PROJECT_DIR$/templates/submit_report.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/donation/static/donation/css/caco-style.less" />
-        <option value="$PROJECT_DIR$/donation/models.py" />
         <option value="$PROJECT_DIR$/donation/forms.py" />
         <option value="$PROJECT_DIR$/templates/show_report.html" />
         <option value="$PROJECT_DIR$/.bashrc" />
+        <option value="$PROJECT_DIR$/donation/models.py" />
         <option value="$PROJECT_DIR$/donation/views.py" />
       </list>
     </option>
@@ -316,6 +312,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="LayoutCode.rearrangeEntriesPython" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -804,12 +801,12 @@
       <workItem from="1395779483551" duration="8480000" />
       <workItem from="1395997884643" duration="20012000" />
       <workItem from="1396173070449" duration="1506000" />
-      <workItem from="1396364635279" duration="3290000" />
+      <workItem from="1396364635279" duration="4947000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153915000" />
+    <option name="totallyTimeSpent" value="155572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1215" height="1000" extended-state="6" />
@@ -820,6 +817,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -837,7 +835,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3570658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21574973" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1177,16 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/donation/models.py">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="44" selection-start="3793" selection-end="3793" vertical-scroll-proportion="0.0" vertical-offset="1157" max-vertical-offset="2556">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/show_report.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="36" selection-start="365" selection-end="365" vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="594">
@@ -1203,7 +1190,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/donation/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="547" column="0" selection-start="14281" selection-end="14281" vertical-scroll-proportion="0.52153665" vertical-offset="9128" max-vertical-offset="10422">
+        <state line="531" column="0" selection-start="14021" selection-end="14021" vertical-scroll-proportion="0.0" vertical-offset="8912" max-vertical-offset="10476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/donation/models.py">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="171" column="0" selection-start="5137" selection-end="5137" vertical-scroll-proportion="0.8742724" vertical-offset="2309" max-vertical-offset="3168">
           <folding />
         </state>
       </provider>

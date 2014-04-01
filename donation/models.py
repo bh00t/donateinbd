@@ -45,6 +45,10 @@ class UserProfile(models.Model):
             return self.user.username
         return full_name
 
+    def __unicode__(self):
+        return self.get_full_name()
+
+
 
 
 
@@ -88,6 +92,15 @@ class Post(models.Model):
     post_donation_type = models.CharField(max_length=100,choices=POST_DONATION_TYPE)
     post_donation_method = models.CharField(max_length=100)
     post_rating = models.IntegerField(default=5)
+    verified = models.CharField(max_length=100,choices=FEEDBACK_VERIFICATION, default="unverified")
+
+
+    def __unicode__(self):
+
+        if len(self.post_header + self.post_detail) > 20:
+            return (self.post_header + self.post_detail)[:20]
+        return (self.post_header + self.post_detail)
+
 
 class Message(models.Model):
 
@@ -98,6 +111,9 @@ class Message(models.Model):
     event_time = models.TimeField(auto_now=True)
     file = models.FileField(upload_to='message/%Y/%M/%D', null=True)
 
+    def __unicode__(self):
+        return self.sender.userprofile.get_full_name()+" -> "+self.receiver
+
 
 class ProfileFeedback(models.Model):
 
@@ -105,6 +121,12 @@ class ProfileFeedback(models.Model):
     message = models.TextField()
     feedback_sender = models.CharField(max_length=100)
     event_time = models.TimeField(auto_now=True)
+
+    def __unicode__(self):
+
+        if len(self.message)>20:
+            return self.message[:20]
+        return self.message
 
 
 class PostFeedback(models.Model):
@@ -114,6 +136,12 @@ class PostFeedback(models.Model):
     feedback_sender = models.CharField(max_length=100)
     event_time = models.TimeField(auto_now=True)
     verified = models.CharField(max_length=100,choices=FEEDBACK_VERIFICATION, default="unverified")
+
+    def __unicode__(self):
+
+        if len(self.message)>20:
+            return self.message[:20]
+        return self.message
 
 
 
@@ -128,6 +156,7 @@ class WorkingProject(models.Model):
 class Report(models.Model):
 
     working_project = models.ForeignKey(Post)
+    profile = models.ForeignKey(UserProfile)
     file = models.FileField("Supporting Document",upload_to='media/report/%Y/%M/%D')
     date=models.DateTimeField(auto_now=True)
     event_time=models.TimeField(auto_now=True)
@@ -135,3 +164,8 @@ class Report(models.Model):
     additional_info = models.TextField(null=True,verbose_name="Additional message about further assistance",help_text="Write if you need further assistance.")
 
 
+    def __unicode__(self):
+
+        if len(self.description)>20:
+            return self.description[:20]
+        return self.description

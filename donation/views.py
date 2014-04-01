@@ -527,6 +527,9 @@ def submit_report(request):
         if submit_report_form.is_valid():
 
             report = submit_report_form.save()
+            report.profile=UserProfile.objects.get(user=request.user)
+            report.save()
+
 
             return show_report(request, pk=report.id)
 
