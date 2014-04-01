@@ -127,7 +127,7 @@ class WorkingProject(models.Model):
 
 class Report(models.Model):
 
-    working_project = models.CharField(max_length=200,null=True)
+    working_project = models.ForeignKey(Post)
     file = models.FileField("Supporting Document",upload_to='media/report/%Y/%M/%D')
     date=models.DateTimeField(auto_now=True)
     event_time=models.TimeField(auto_now=True)

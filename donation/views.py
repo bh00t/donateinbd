@@ -500,13 +500,89 @@ class send_message(View):
 
 
 from forms import ReportForm
+from models import Report
+
+@login_required()
+def show_report(request,**kwargs):
+
+    report = Report.objects.get(pk=kwargs['pk'])
+
+    return render(request,'show_report.html',{'report':report})
+
+
 
 @login_required()
 def submit_report(request):
-    submit_report_form = ReportForm()
-    # print submit_report_form
-    return render(request,'submit_report.html', {'submit_report_form':submit_report_form})
+
+    if request.method == "GET":
+
+        submit_report_form = ReportForm()
+        # print submit_report_form
+        return render(request,'submit_report.html', {'submit_report_form':submit_report_form})
+
+    if request.method == 'POST':
+
+        submit_report_form = ReportForm(request.POST,request.FILES)
+
+        if submit_report_form.is_valid():
+
+            report = submit_report_form.save()
+
+            return show_report(request, pk=report.id)
 
 
-def show_report(request):
-    return render(request,'show_report.html', { } )
+        return render(request,'submit_report.html', {'submit_report_form':submit_report_form})
+
+
+
+@login_required()
+def show_report_list(request,post_id=None):
+
+    report_list = Report.objects.filter(post=post_id)
+
+    return render(request,'show_report_list.html',{'report_list':report_list})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

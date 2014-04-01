@@ -105,6 +105,10 @@ class ReportForm(forms.ModelForm):
     class Meta:
         model=Report
 
+        fields = ['working_project','description','file','additional_info']
+
+
+
 
 
 
