@@ -2,12 +2,26 @@
 
 {% block content %}
 
+
+
+<div class="col-lg-12">
+	<div class="row" style="padding: 10px 10px 10px 10px;">
+		<div>
+
+			<h3 style="text-align: center;">
+				<strong>Donations</strong>
+				&nbsp;
+			</h3>
+			<hr>
+			<br>
     {% for profile in user_list %}
 
-        <a href="/profile/{{ profile.username }}" class=''>
+        
             <div class="media">
-                <img class="pull-left media-object" alt="64x64" style="width: 64px; height: 64px;" src="{{MEDIA_URL}}{{ profile.userprofile.image }}" >
+                
                 <div class="media-body">
+					<a href="/profile/{{ profile.username }}" class="list-group-item">
+					<img class="pull-left media-object" alt="User's image not provided" style="width: 64px; height: 64px; padding-right:100px;" src="{{MEDIA_URL}}{{ profile.userprofile.image }}" >		
                     Name: {{  profile.userprofile.get_full_name }}
                     <br>
                     Type: {{ profile.userprofile.donor_donee_type }}
@@ -15,13 +29,19 @@
                     Location: {{ profile.userprofile.country }}
                     <br>
                     More...
+                    </a>
                 </div>
                 <br>
             </div>
-
-        </a>
         <hr>
 
     {% endfor %}
+
+
+            </div>
+        </div>
+
+    </div>
+
 
 {% endblock %}

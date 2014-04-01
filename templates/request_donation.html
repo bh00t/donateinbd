@@ -19,14 +19,14 @@
                                 {% csrf_token %}
 								<div class="form-group">
 									<label>Type of Donation *</label>
-									<select class="form-control">
+									<select class="form-control" required>
 										<option>Money</option>
 										<option>Goods/Relief</option>
 									</select>
 								</div>
 								<div class="form-group">
 									<label>Reason *</label>
-									<textarea class="form-control" rows="3"></textarea>
+									<textarea class="form-control" rows="3" required></textarea>
 								</div>
 								<div class="form-group">
 									<label>Amount Required *</label>

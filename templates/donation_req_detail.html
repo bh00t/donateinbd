@@ -6,7 +6,7 @@
     <div>
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Donation Detail</h1>
+                <h1 class="page-header">Donation Request Detail</h1>
             </div>
 
             {% if cur_profile %}
@@ -40,14 +40,14 @@
             <div class="panel panel-default">
 
                 <div class="panel-heading">
-                    Donor Information
+                    Donee Information
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <table border="0px">
                         <tbody>
                         <tr>
-                            <td>Name of the Donor: &nbsp;&nbsp;&nbsp;</td><td><a href="/profile/{{ post.user.user.username }}">{{ post.user.user.username }}</a></td>
+                            <td>Name of the Donee: &nbsp;&nbsp;&nbsp;</td><td><a href="/profile/{{ post.user.user.username }}">{{ post.user.user.username }}</a></td>
                         </tr>
                         <tr>
                             <td>Country :</td><td> {{ post.user.country }}	</td>
@@ -106,7 +106,7 @@
                     <br>
                     <br>
                     <br>
-                    <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#confirm"> Request Donation</button>
+                    <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#confirm"> Make Donation</button>
                     
                 </div>
                 <!-- /.panel-body -->
@@ -131,7 +131,7 @@
                     <h4 class="modal-title">Request donation</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Donation request sent to Taksir. </p>
+                    <p>Donation request sent to {{ post.user.user.username }}. </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

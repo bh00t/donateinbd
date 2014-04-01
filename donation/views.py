@@ -64,7 +64,6 @@ class IndexView(ListView):
 
 
 
-
 def index(request, auth_form = None):
 
     # if not request.user.is_authenticated():
@@ -167,7 +166,7 @@ def register(request,register_form=None):
 
             login(request,user)
 
-            return redirect('/')
+            return redirect('/dashboard')
 
         else:
 
@@ -184,7 +183,7 @@ def login_view(request):
         else :
             return index(request, auth_form=form)
 
-    return redirect('/')
+    return redirect('/dashboard')
 
 
 @login_required()
@@ -226,12 +225,12 @@ def submit_donation_view(request):
             print post.user_id
             post.save()
             # form.save_m2m()
-            redirect('/')
+            redirect('/dashboard')
         else :
             post_donation_view(request, form)
     # print request
 
-    return redirect('/')
+    return redirect('/dashboard')
 
 
 def post_detail_view(request,pk=1,auth_form=None):
@@ -259,7 +258,10 @@ def post_detail_view(request,pk=1,auth_form=None):
 
 
     # message5=message5[::-1]
-    return render(request,'donation_detail.html',{'post':post, 'user':request.user, 'auth_form': auth_form, 'message5':message5,'cur_profile':cur_profile,'report_list':report_list})
+    if post.post_type == 'make donation':
+		return render(request,'donation_detail.html',{'post':post, 'user':request.user, 'auth_form': auth_form, 'message5':message5,'cur_profile':cur_profile,'report_list':report_list})
+    else:
+		return render(request,'donation_req_detail.html',{'post':post, 'user':request.user, 'auth_form': auth_form, 'message5':message5,'cur_profile':cur_profile,'report_list':report_list})
 
 
 @login_required()
@@ -412,10 +414,20 @@ def update(request, update_form= None):
             user.first_name=update_form.cleaned_data['first_name']
             user.last_name=update_form.cleaned_data['last_name']
             user.email=update_form.cleaned_data['email']
+            user.website=update_form.cleaned_data['website']
+            user.donor_donee_type=update_form.cleaned_data['donor_donee_type']
+            user.image=update_form.cleaned_data['image']
+            user.occupation=update_form.cleaned_data['occupation']
+            user.description=update_form.cleaned_data['description']
+            user.country=update_form.cleaned_data['country']
+            user.city=update_form.cleaned_data['city']
+            user.street_address=update_form.cleaned_data['street_address']
+            user.contact_no=update_form.cleaned_data['contact_no']
+            user.street_no=update_form.cleaned_data['street_no']
 
             user.save()
 
-            print "hic"
+            #~ print "hic"
             return my_profile(request)
         else :
             request.method="GET"
@@ -557,7 +569,7 @@ def submit_report(request):
 
 @login_required()
 def show_report_list(request,post_id=None):
-
+	
     report_list = Report.objects.filter(post=post_id)
 
     return render(request,'show_report_list.html',{'report_list':report_list})
@@ -566,6 +578,22 @@ def show_report_list(request,post_id=None):
 
 
 
+def first_page(request):
+	
+	post_list = Post.objects.all().filter(post_type="take donation")
+	req_len = len(post_list)
+	if len(post_list) > 2:
+		post_list = post_list[:2]
+	
+	don_post_list = Post.objects.all().filter(post_type="make donation")
+	don_len = len(don_post_list)
+	if len(don_post_list) > 2:
+		don_post_list = don_post_list[:2]
+		
+	auth_form = AuthenticateForm()
+	
+	
+	return render(request,'first_page.html', {'req_post_list':post_list,'offer_post_list':don_post_list,'req_len':req_len,'don_len':don_len,'auth_form':auth_form})
 
 
 

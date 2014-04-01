@@ -10,27 +10,51 @@
 			<h1 class="page-header">
 				Report on <a href="/post/{{ report.working_project.id }}>">{{ report.working_project.post_header }}</a>
 			</h1>
-            <br>
-            By {{ report.profile.get_full_name }} on {{ report.event_time }} {{ report.date }}
+            
 		</div>
 	</div>
 
-    <div class="col-lg-8">
+    <div class="col-lg-10">
         <div class="panel panel-default">
+			
+			<div class="panel-heading">
+				<p>By <strong>{{ report.profile.get_full_name }}</strong> on  {{ report.date }}  </p>
+			</div>
 			
             <!-- /.panel-heading -->
             <div class="panel-body">
-
-                Subject: {{ report.header }}
+				<table class="table">
+					<tbody>
+						<tr>
+							<td><strong>Subject: </strong></td>
+							<td> {{ report.header }}</td>
+						</tr>
+						<tr>
+							<td><strong>Description:</strong></td>
+							<td>{{ report.description }}</td>
+						</tr>
+						<tr>
+							<td><strong>File:</strong></td>
+							<td><a href="{{ MEDIA_URL }}{{ report.file }}">Click here to download/view</a></td>
+						</tr>
+						<tr>
+							<td><strong>Additional Message:</strong></td>
+							<td> {{ report.additional_info }}</td>
+						</tr>
+						
+					</tbody>
+				</table>
+               
                 <br>
-                Description: {{ report.description }}
+                 
                 <br>
 
-                File: {{ report.file }}
+                
                 <br>
 
-                Additional Message: {{ report.additional_info }}
-              
+                
+				<br>
+				
             </div>
             <!-- /.panel-body -->
         </div>

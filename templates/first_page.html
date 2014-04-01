@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donate in Bangladesh</title>
+
+    <!-- Core CSS - Include with every page -->
+    <link href="{% static "donation/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "donation/font-awesome/css/font-awesome.css" %}" rel="stylesheet">
+    <link href="{% static "donation/css/plugins/timeline/timeline.css" %}" rel="stylesheet">
+    <link href="{% static "donation/css/sb-admin.css" %}" rel="stylesheet">
+    <link href="{% static "donation/css/caco-style.less" %}" rel="stylesheet/less" type="text/css">
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Donation in Bangladesh</a>
+            </div>
+            <!-- /.navbar-header -->
+
+
+
+
+    {% if user.is_authenticated %}
+
+
+        <ul class="nav navbar-top-links navbar-right">
+
+
+            {#************************************************************* code for the messages *****************************         #}
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-messages">
+                    {% for message in message5 %}
+                    <li>
+                        <a href="/message">
+                            <div>
+                                <strong>{{ message.sender_full_name }} Wrote</strong>
+                                   <span class="pull-right text-muted">
+                                        <em>{{ message.event_time }}</em>
+                                    </span>
+
+                            </div>
+                            <div>{{ message.content }}</div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    {% endfor %}
+                </ul>
+
+            </li>
+            {#***************************************** code for feedback *********************************************#}
+            <!-- /.dropdown -->
+{#            <li class="dropdown">#}
+{#                <a class="dropdown-toggle" data-toggle="dropdown" href="#">#}
+{#                    <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>#}
+{#                </a>#}
+{#                <ul class="dropdown-menu dropdown-alerts">#}
+{#                    <li>#}
+{#                        <a href="{{ feedback.link }}">#}
+{#                            <div>#}
+{#                                <i class="fa fa-comment fa-fw"></i> New Feedback#}
+{#                                <span class="pull-right text-muted small">{{ feedback.time }}</span>#}
+{#                            </div>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="divider"></li>#}
+{##}
+{#                </ul>#}
+{#            </li>#}
+
+
+
+            <!-- /.dropdown -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="/my_profile">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="/my_profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    </li>
+                    <li><a href="/update"><i class="fa fa-gear fa-fw"></i> Update Profile</a>
+                    </li>
+{#                    <li><a href="/deactivate"><i class="fa fa-gear fa-fw"></i> Deactivate Profile</a>#}
+{#                    </li>#}
+                    <li class="divider"></li>
+                    <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+
+                <!-- /.dropdown-user -->
+            </li>
+
+
+
+            <!-- /.dropdown -->
+        </ul>
+
+    {% else %}
+	<ul class="nav navbar-top-links navbar-right">
+		<li>
+        <form class="pull-right" action = "/login" method="POST">
+
+            {% csrf_token %}
+            {{ auth_form.non_field_errors }}
+            {{ auth_form.username }}
+            {{ auth_form.password }}
+            {#            {{ auth_form }}#}
+            <input type="submit" value="Login">
+
+        </form>
+		</li>
+		<li>
+		<a href="/register">Register</a>
+		</li>
+	</ul>
+    {% endif %}
+
+        </nav>
+        <!-- /.navbar-static-top -->
+
+        
+        <!-- /.navbar-static-side -->
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="jumbotron" style="background:#7579DF; color:#FFFFFF">
+			  <h1>Donation in Bangladesh</h1>
+			  <h3 class="text-right">Provide fund, help people</h3>
+		</div>
+
+	</div>
+</div>
+
+        <div class="col-lg-11" style="padding-left:70px">
+            <div class="row">
+
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="panel panel-default">
+
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+							<p>A short description about what it does.</p>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    
+                    <div class="panel panel-default">
+						 <div class="panel-heading">
+                            <h4>Donation offers</h4>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+							
+							 {% for post in offer_post_list %}
+								<div class="media">
+									<div class="media-body">
+										<a class="list-group-item" href="post/{{ post.id }}">
+											<h4 class="media-heading">{{ post.post_header }}</h4>
+											{{ post.post_detail }}
+
+										</a>
+									</div>
+									<br>
+									By <a href="profile/{{ post.user.user.username }}">{{ post.user.user.username }}</a> on <time>{{ post.post_date }}</time>
+								</div>
+								<hr>
+
+							{% endfor %}
+							
+							<hr>
+							<a href="/dashboard" class="btn text-right">More..</a>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    
+                    <div class="panel panel-default">
+						 <div class="panel-heading">
+                           <h4> Donation requests</h4>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+							 {% for post in req_post_list %}
+								<div class="media">
+									<div class="media-body">
+										<a class="list-group-item" href="post/{{ post.id }}">
+											<h4 class="media-heading">{{ post.post_header }}</h4>
+											{{ post.post_detail }}
+
+										</a>
+									</div>
+									<br>
+									By <a href="profile/{{ post.user.user.username }}">{{ post.user.user.username }}</a> on <time>{{ post.post_date }}</time>
+								</div>
+
+							{% endfor %}
+							<hr>
+                                <a href="requests" class="btn" >More...</a>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p style="font-size:1.2em" class="text-info"><strong style="font-size:5.5em">{{ don_len }}</strong> peoples have helped</p>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+							<p style="font-size:1.1em" class="text-success"><strong style="font-size:4.5em">{{ req_len }}</strong> peoples are seeking help</p>
+                        </div>
+                        
+                        <!-- /.panel-body -->
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+							<p style="font-size:2em" class="text-success">Join us, Help People!</p>
+                        </div>
+                        
+                        <!-- /.panel-body -->
+                    </div>
+                    
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Core Scripts - Include with every page -->
+<!--
+    <script src="{% static "donation/js/less.js" %}"></script>
+-->
+    <script src="{% static "donation/js/jquery-1.10.2.min.js" %}"></script>
+    <script src="{%  static "donation/js/bootstrap.min.js" %}"></script>
+    <script src="{%  static "donation/js/plugins/metisMenu/jquery.metisMenu.js" %}"></script>
+
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="{%  static "donation/js/sb-admin.js" %}"></script>
+
+    <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
+    
+
+</body>
+
+</html>

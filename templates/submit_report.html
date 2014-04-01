@@ -25,7 +25,7 @@
                     {% for form_element in submit_report_form %}
                         <div class="form-group">
                             {{ form_element.label_tag }}
-                            {% render_field form_element class+="form-control" %}
+                            {% render_field form_element class+="form-control" required="required" %}
                         </div>
                     {% endfor %}
 

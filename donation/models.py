@@ -158,7 +158,7 @@ class Report(models.Model):
 
     working_project = models.ForeignKey(Post)
     profile = models.ForeignKey(UserProfile)
-    file = models.FileField(verbose_name="Supporting Document",upload_to='media/report/%Y/%M/%D',null=True)
+    file = models.FileField(verbose_name="Supporting Document",upload_to='report/%Y/%M/%D',null=True)
     date=models.DateTimeField(auto_now=True)
     event_time=models.TimeField(auto_now=True)
     header = models.CharField(max_length=200,verbose_name='Subject',null=True,blank=True)

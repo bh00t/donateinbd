@@ -188,7 +188,8 @@
         </ul>
 
     {% else %}
-
+	<ul class="nav navbar-top-links navbar-right">
+		<li>
         <form class="pull-right" action = "/login" method="POST">
 
             {% csrf_token %}
@@ -199,6 +200,11 @@
             <input type="submit" value="Login">
 
         </form>
+		</li>
+		<li>
+		<a href="/register">Register</a>
+		</li>
+	</ul>
 
     {% endif %}
 
@@ -218,6 +224,7 @@
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav" id="side-menu">
+<!--
                 <li class="sidebar-search">
                     <div class="input-group custom-search-form">
                         <input type="text" class="form-control" placeholder="Search...">
@@ -227,23 +234,30 @@
                                 </button>
                             </span>
                     </div>
-                    <!-- /input-group -->
+                  
+
+
                 </li>
+-->
 
                 {% if user.is_authenticated %}
 
                     <li>
-                        <a href="/my_profile"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+
+                    <li>
+                        <a href="/message"><i class="fa fa-edit fa-fw"></i> Messages</a>
                     </li>
 
                     <li>
                         <a href="/my_donation"><i class="fa fa-table fa-fw"></i> My donations</a>
                     </li>
 
-
                     <li>
-                        <a href="/message"><i class="fa fa-edit fa-fw"></i> Messages</a>
+                        <a href="/report/submit"><i class="fa fa-table fa-fw"></i> Submit Report</a>
                     </li>
+
 
                 {% endif %}
 
