@@ -243,8 +243,23 @@ def post_detail_view(request,pk=1,auth_form=None):
     else :
         message5 = messages5[:5]
 
+    cur_profile = (str(request.user) == str(post.user.user.username))
+
+    # print request.user
+    # print post.user.user.username
+    # print cur_profile
+
+    # user=User.objects.get(username = request.user)
+    # userprofile = UserProfile.objects.get(user=user)
+
+
+    report_list = Report.objects.filter(working_project = post )
+
+    # print cur_profile,report_list
+
+
     # message5=message5[::-1]
-    return render(request,'donation_detail.html',{'post':post, 'user':request.user, 'auth_form': auth_form, 'message5':message5})
+    return render(request,'donation_detail.html',{'post':post, 'user':request.user, 'auth_form': auth_form, 'message5':message5,'cur_profile':cur_profile,'report_list':report_list})
 
 
 @login_required()
@@ -503,11 +518,11 @@ from forms import ReportForm
 from models import Report
 
 @login_required()
-def show_report(request,**kwargs):
+def show_report(request,report_id=None):
 
-    report = Report.objects.get(pk=kwargs['pk'])
+    report = Report.objects.get(pk=report_id)
 
-    return render(request,'show_report.html',{'report':report})
+    return render(request, 'show_report.html', {'report': report})
 
 
 

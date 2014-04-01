@@ -42,8 +42,10 @@ urlpatterns = patterns('',
 
 
 					   url(r'^report/submit',donationview.submit_report),
-					   url(r'^report/show',donationview.show_report),
-					
+					   url(r'^report/show/(?P<report_id>\d+)$',donationview.show_report),
+
+					   url(r'^report/show_report_list/(?P<post_id>\d+)$',donationview.show_report_list),
+
 						
 						
                        (r'^grappelli/', include('grappelli.urls')),

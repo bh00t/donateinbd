@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50db0b7d-2ee3-4f6f-bb2b-3428b3eab5af" name="Default" comment="having a backup in github ++&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/donation/admin.py" afterPath="$PROJECT_DIR$/donation/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/donation_detail.html" afterPath="$PROJECT_DIR$/templates/donation_detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/donation/models.py" afterPath="$PROJECT_DIR$/donation/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/donateInBD/settings.py" afterPath="$PROJECT_DIR$/donateInBD/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/show_report.html" afterPath="$PROJECT_DIR$/templates/show_report.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/donateInBD/urls.py" afterPath="$PROJECT_DIR$/donateInBD/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/donation/views.py" afterPath="$PROJECT_DIR$/donation/views.py" />
     </list>
     <ignored path="donateInBD.iws" />
@@ -85,15 +91,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/donateInBD/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="62" selection-start="1992" selection-end="1992" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1080">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="post_donation.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/post_donation.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -106,8 +103,28 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/donation/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="531" column="0" selection-start="14021" selection-end="14021" vertical-scroll-proportion="0.0" vertical-offset="8912" max-vertical-offset="10476">
+            <state line="558" column="53" selection-start="14722" selection-end="14722" vertical-scroll-proportion="0.0" vertical-offset="9198" max-vertical-offset="10746">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="donation_detail.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/donation_detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="18" selection-start="235" selection-end="235" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="3348">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/donation/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,25 +141,25 @@
       <file leaf-file-name="show_report.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/show_report.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="36" selection-start="365" selection-end="365" vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="594">
+            <state line="29" column="0" selection-start="582" selection-end="582" vertical-scroll-proportion="-19.333334" vertical-offset="0" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/donation/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="171" column="0" selection-start="5137" selection-end="5137" vertical-scroll-proportion="0.8742724" vertical-offset="2309" max-vertical-offset="3168">
+            <state line="160" column="41" selection-start="4708" selection-end="4708" vertical-scroll-proportion="0.0" vertical-offset="2345" max-vertical-offset="3204">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="68" selection-start="1590" selection-end="1590" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="5778">
+            <state line="180" column="0" selection-start="6654" selection-end="6654" vertical-scroll-proportion="3.8942308" vertical-offset="0" max-vertical-offset="5778">
               <folding />
             </state>
           </provider>
@@ -166,7 +183,6 @@
         <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/templates/post_donation.html" />
         <option value="$PROJECT_DIR$/templates/home.html" />
-        <option value="$PROJECT_DIR$/templates/donation_detail.html" />
         <option value="$PROJECT_DIR$/templates/requests.html" />
         <option value="$PROJECT_DIR$/templates/donations.html" />
         <option value="$PROJECT_DIR$/templates/users.html" />
@@ -174,21 +190,22 @@
         <option value="$PROJECT_DIR$/templates/message.html" />
         <option value="$PROJECT_DIR$/templates/all_message.html" />
         <option value="$PROJECT_DIR$/templates/my_profile.html" />
-        <option value="$PROJECT_DIR$/donation/admin.py" />
         <option value="$PROJECT_DIR$/templates/notifications.html" />
         <option value="$PROJECT_DIR$/donateInBD/secret.py" />
-        <option value="$PROJECT_DIR$/donateInBD/settings.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/donateInBD/urls.py" />
         <option value="$PROJECT_DIR$/templates/update.html" />
         <option value="$PROJECT_DIR$/templates/submit_report.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/donation/static/donation/css/caco-style.less" />
         <option value="$PROJECT_DIR$/donation/forms.py" />
-        <option value="$PROJECT_DIR$/templates/show_report.html" />
         <option value="$PROJECT_DIR$/.bashrc" />
-        <option value="$PROJECT_DIR$/donation/models.py" />
+        <option value="$PROJECT_DIR$/donateInBD/settings.py" />
+        <option value="$PROJECT_DIR$/donateInBD/urls.py" />
+        <option value="$PROJECT_DIR$/donation/admin.py" />
+        <option value="$PROJECT_DIR$/templates/donation_detail.html" />
         <option value="$PROJECT_DIR$/donation/views.py" />
+        <option value="$PROJECT_DIR$/templates/show_report.html" />
+        <option value="$PROJECT_DIR$/donation/models.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
       </list>
     </option>
   </component>
@@ -801,12 +818,12 @@
       <workItem from="1395779483551" duration="8480000" />
       <workItem from="1395997884643" duration="20012000" />
       <workItem from="1396173070449" duration="1506000" />
-      <workItem from="1396364635279" duration="4947000" />
+      <workItem from="1396364635279" duration="13572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155572000" />
+    <option name="totallyTimeSpent" value="164197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1215" height="1000" extended-state="6" />
@@ -822,7 +839,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -975,11 +992,6 @@
         <state line="48" column="24" selection-start="1425" selection-end="1425" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1440" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/donation_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="33" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="2844" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/donations.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="18" selection-start="2508" selection-end="2508" vertical-scroll-proportion="-27.74074" vertical-offset="583" max-vertical-offset="1440" />
@@ -1035,11 +1047,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/donation/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="268" selection-end="268" vertical-scroll-proportion="0.20642202" vertical-offset="0" max-vertical-offset="872" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/notifications.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="14" selection-start="1081" selection-end="1081" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="756" />
@@ -1090,11 +1097,6 @@
         <state line="30" column="102" selection-start="762" selection-end="762" vertical-scroll-proportion="-5.3333335" vertical-offset="396" max-vertical-offset="3852" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/donateInBD/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="26" selection-start="2514" selection-end="2514" vertical-scroll-proportion="0.8761468" vertical-offset="1162" max-vertical-offset="2034" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin_users.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1044" />
@@ -1136,23 +1138,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="68" selection-start="1590" selection-end="1590" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="5778">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/donation/static/donation/css/caco-style.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="1" selection-start="498" selection-end="498" vertical-scroll-proportion="-21.333334" vertical-offset="0" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/donateInBD/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="62" selection-start="1992" selection-end="1992" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>
@@ -1174,13 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/show_report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="36" selection-start="365" selection-end="365" vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="594">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/show_report_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
@@ -1188,9 +1169,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/donateInBD/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="0" selection-start="2563" selection-end="2563" vertical-scroll-proportion="0.0" vertical-offset="1162" max-vertical-offset="2088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/donation/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/donation_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="18" selection-start="235" selection-end="235" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="3348">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/donation/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="531" column="0" selection-start="14021" selection-end="14021" vertical-scroll-proportion="0.0" vertical-offset="8912" max-vertical-offset="10476">
+        <state line="558" column="53" selection-start="14722" selection-end="14722" vertical-scroll-proportion="0.0" vertical-offset="9198" max-vertical-offset="10746">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/donateInBD/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="30" selection-start="1233" selection-end="1249" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1116">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/show_report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="582" selection-end="582" vertical-scroll-proportion="-19.333334" vertical-offset="0" max-vertical-offset="630">
           <folding />
         </state>
       </provider>
@@ -1200,7 +1218,14 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="0" selection-start="5137" selection-end="5137" vertical-scroll-proportion="0.8742724" vertical-offset="2309" max-vertical-offset="3168">
+        <state line="160" column="41" selection-start="4708" selection-end="4708" vertical-scroll-proportion="0.0" vertical-offset="2345" max-vertical-offset="3204">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="180" column="0" selection-start="6654" selection-end="6654" vertical-scroll-proportion="3.8942308" vertical-offset="0" max-vertical-offset="5778">
           <folding />
         </state>
       </provider>

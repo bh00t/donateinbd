@@ -121,6 +121,7 @@ class ProfileFeedback(models.Model):
     message = models.TextField()
     feedback_sender = models.CharField(max_length=100)
     event_time = models.TimeField(auto_now=True)
+    verified = models.CharField(max_length=100,choices=FEEDBACK_VERIFICATION, default="unverified")
 
     def __unicode__(self):
 
@@ -157,9 +158,10 @@ class Report(models.Model):
 
     working_project = models.ForeignKey(Post)
     profile = models.ForeignKey(UserProfile)
-    file = models.FileField("Supporting Document",upload_to='media/report/%Y/%M/%D')
+    file = models.FileField(verbose_name="Supporting Document",upload_to='media/report/%Y/%M/%D',null=True)
     date=models.DateTimeField(auto_now=True)
     event_time=models.TimeField(auto_now=True)
+    header = models.CharField(max_length=200,verbose_name='Subject',null=True,blank=True)
     description = models.TextField(null=True,verbose_name="A short description on your work")
     additional_info = models.TextField(null=True,verbose_name="Additional message about further assistance",help_text="Write if you need further assistance.")
 

@@ -2,88 +2,116 @@
 
 {% block content %}
 
-{#    <div id="page-wrapper">#}
+    {#    <div id="page-wrapper">#}
     <div>
         <div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <h1 class="page-header">Donation Detail</h1>
             </div>
 
-            <div class="col-lg-10">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Donor Information
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <table border="0px">
-                            <tbody>
-                            <tr>
-                                <td>Name of the Donor: &nbsp;&nbsp;&nbsp;</td><td><a href="/profile/{{ post.user.user.username }}">{{ post.user.user.username }}</a></td>
-                            </tr>
-                            <tr>
-                                <td>Country :</td><td> {{ post.user.country }}	</td>
-                            </tr>
-                            <tr>
-                                <td>Donated: </td><td>{{ post.user.donation_make_count }}</td>
-                            </tr>
-                            </tbody>
-                        </table>
+            {% if cur_profile %}
 
-                    </div>
+                <div class="col-lg-10">
+                <div class="panel panel-default">
+
+                    {% if report_list %}
+
+                        <div class="panel-heading">
+                            Report for this Project
+                        </div>
+
+                        {% for report in report_list %}
+
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                            <a href="/report/show/{{ report.id }}">{{ report.header }} on {{ report.event_time }}{{ report.date }}</a>
+
+                        </div>
+
+                        {% endfor %}
+
+                    {% endif %}
                     <!-- /.panel-body -->
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Donation Information
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <table border="0px">
-                            <tbody>
-                            <tr>
-                                <td>Type of donation:</td><td>{{ post.post_donation_type }}</td>
-                            </tr>
 
-{#                            {% if donation.ismoney %}#}
+            {% endif %}
 
-                                <tr>
-                                    <td>Amount: </td>
-                                    <td>{{ post.post_amount }}	</td>
-                                </tr>
-                                <tr>
-                                    <td>Preferred donation method: &nbsp;&nbsp;&nbsp;</td>
-                                    <td>{{ post.post_donation_method }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Interested sectors: </td>
-                                    <td>
-                                            {{ post.post_sector }}
-                                            <br>
-{#                                        {% endfor %}#}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Description:</td><td>{{ post.post_detail }}</td>
-                                </tr>
+            <div class="panel panel-default">
 
-                                </tbody>
-
-{#                            {% else  %}#}
-
-
-{#                            {% endif %}#}
-                        </table>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#confirm"> Request Donation</button>
-                        <button class="btn btn-default pull-right" data-toggle="modal" data-target="#priority"> Change priority(admin only)</button>
-                    </div>
-                    <!-- /.panel-body -->
+                <div class="panel-heading">
+                    Donor Information
                 </div>
-                <!-- /.panel -->
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <table border="0px">
+                        <tbody>
+                        <tr>
+                            <td>Name of the Donor: &nbsp;&nbsp;&nbsp;</td><td><a href="/profile/{{ post.user.user.username }}">{{ post.user.user.username }}</a></td>
+                        </tr>
+                        <tr>
+                            <td>Country :</td><td> {{ post.user.country }}	</td>
+                        </tr>
+                        <tr>
+                            <td>Donated: </td><td>{{ post.user.donation_make_count }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Donation Information
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <table border="0px">
+                        <tbody>
+                        <tr>
+                            <td>Type of donation:</td><td>{{ post.post_donation_type }}</td>
+                        </tr>
+
+                        {#                            {% if donation.ismoney %}#}
+
+                        <tr>
+                            <td>Amount: </td>
+                            <td>{{ post.post_amount }}	</td>
+                        </tr>
+                        <tr>
+                            <td>Preferred donation method: &nbsp;&nbsp;&nbsp;</td>
+                            <td>{{ post.post_donation_method }}</td>
+                        </tr>
+                        <tr>
+                            <td>Interested sectors: </td>
+                            <td>
+                                {{ post.post_sector }}
+                                <br>
+                                {#                                        {% endfor %}#}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Description:</td><td>{{ post.post_detail }}</td>
+                        </tr>
+
+                        </tbody>
+
+                        {#                            {% else  %}#}
+
+
+                        {#                            {% endif %}#}
+                    </table>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#confirm"> Request Donation</button>
+                    <button class="btn btn-default pull-right" data-toggle="modal" data-target="#priority"> Change priority(admin only)</button>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
             </div>
             <!-- /.col-lg-8 -->
 

@@ -106,3 +106,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ADMIN_MEDIA_PREFIX ='/admin-media/'
 
 TEMPLATE_DIRS = templates_
+
+GRAPPELLI_ADMIN_TITLE = 'Donate In Bangladesh'
