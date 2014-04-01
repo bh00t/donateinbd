@@ -539,14 +539,16 @@ def submit_report(request):
 
         submit_report_form = ReportForm(request.POST,request.FILES)
 
+        print submit_report_form
+
         if submit_report_form.is_valid():
 
-            report = submit_report_form.save()
+            report = submit_report_form.save(commit=False)
             report.profile=UserProfile.objects.get(user=request.user)
             report.save()
 
 
-            return show_report(request, pk=report.id)
+            return show_report(request, report_id=report.id)
 
 
         return render(request,'submit_report.html', {'submit_report_form':submit_report_form})

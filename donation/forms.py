@@ -105,7 +105,7 @@ class ReportForm(forms.ModelForm):
     class Meta:
         model=Report
 
-        fields = ['working_project','description','file','additional_info','amount_spent']
+        fields = ['working_project','header','description','file','additional_info','amount_spent']
 
 
 

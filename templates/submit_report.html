@@ -20,7 +20,7 @@
 
             <!-- /.panel-heading -->
             <div class="panel-body">
-                <form role="form" action="/submit_report" method="POST">
+                <form role="form" action="/report/submit" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for form_element in submit_report_form %}
                         <div class="form-group">
