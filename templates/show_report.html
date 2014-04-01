@@ -10,6 +10,8 @@
 			<h1 class="page-header">
 				Report on <a href="/post/{{ report.working_project.id }}>">{{ report.working_project.post_header }}</a>
 			</h1>
+            <br>
+            By {{ report.profile.get_full_name }} on {{ report.event_time }} {{ report.date }}
 		</div>
 	</div>
 
@@ -19,7 +21,15 @@
             <!-- /.panel-heading -->
             <div class="panel-body">
 
-                {{ report.description }}
+                Subject: {{ report.header }}
+                <br>
+                Description: {{ report.description }}
+                <br>
+
+                File: {{ report.file }}
+                <br>
+
+                Additional Message: {{ report.additional_info }}
               
             </div>
             <!-- /.panel-body -->
